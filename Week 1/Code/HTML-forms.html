@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Vraag 1</h2>
+    <form action="/info" method="post">
+        <label for="surname">Achternaam</label>
+        <input type="text" name="surname" id="surname" placeholder="achternaam">
+        <br>
+        <label for="first-name">Voornaam</label>
+        <input type="text" name="first-name" id="first-name" placeholder="voornaam">
+    </form>
+
+    <h2>Vraag 2</h2>
+    <label for="radio">Radio</label>
+    <input type="radio" name="radio" id="radio">
+    <br>
+    <label for="checkbox">Checkbox</label>
+    <input type="checkbox" name="checkbox" id="checkbox">
+    <br>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+    <br>
+    <label for="reset">Reset</label>
+    <input type="reset" value="Reset">
+    <br>
+    <label for="Date">Date</label>
+    <input type="date" name="date" id="date">
+    <br>
+    <label for="search">Search</label>
+    <input type="search" name="" id="">
+    <br>
+    <label for="time">Time</label>
+    <input type="time" name="" id="">
+    <br>
+
+    <label for="hidden">Hidden</label>
+    <input type="hidden" name="">
+    <br>
+
+    <label for="email">Email</label>
+    <input type="email" name="" id="">
+
+    <h2>Vraag 3</h2>
+    <form action="" method="post">
+        <p>Als de ingevoerde text geen valid email is, krijg je een waarschuwing.</p>
+        <label for="email">Email</label>
+        <input type="email" name="submit" id="submit">
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Vraag 4</h2>
+    <form action="" method="post">
+        <label for="surname">Achternaam</label>
+        <input type="text" name="surname" id="surname" placeholder="achternaam">
+        <br>
+        <label for="first-name">Voornaam</label>
+        <input type="text" name="first-name" id="first-name" placeholder="voornaam">
+        <br>
+        <label for="birth">Geboortedatum</label>
+        <input type="date" name="birth" id="birth">
+        <br>
+        <label for="male">M</label>
+        <input type="radio" name="male" id="male">
+        <label for="female">V</label>
+        <input type="radio" name="female" id="female">
+        <br>
+        <label for="zip">Postcode</label>
+        <input type="text" name="zip" id="zip" placeholder="postcode">
+        <br>
+        <label for="adress">Adres</label>
+        <input type="text" name="adress" id="adress" placeholder="Adres">
+        <br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <h2>Vraag 5</h2>
+    <select name="select" id="select">
+        <option value="Optie 1">Optie 1</option>
+        <option value="Optie 2">Optie 2</option>
+        <option value="Optie 3">Optie 3</option>
+    </select>
+
+    <h2>Vraag 6</h2>
+    <p>Een dropdown list kan je gebruiken als je de gebruiker de keuze wilt geven uit een vast aantal opties waaruit hij
+        maar een kan kiezen. Bijvoorbeeld geboorteland uitkiezen.</p>
+    <p>Radio buttons lijkt een beetje op een select qua functie, maar is beter als er maar keuze is uit een klein aantal
+        opties. Bijvoorbeeld het geslacht uitkiezen.</p>
+    <p>Checkboxes kun je gebruiken als je de gebruiker de optie wilt geven om meerdere opties te kunnen kiezen.
+        Bijvoorbeeld favoriete gerechten aanklikken.</p>
+
+    <h2>Vraag 7</h2>
+    <form action="" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Name">
+        <br>
+        <label for="membership">Membership</label>
+        <input type="radio" name="membership" id="y">
+        <label for="y">Yes</label>
+        <input type="radio" name="membership" id="n">
+        <label for="n">No</label>
+        <br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+        <br>
+        <label for="sport">Sport</label>
+        <select name="sport" id="sport">
+            <option value="tafeltennis">tafeltennis</option>
+            <option value="badminton">badminton</option>
+            <option value="squash">squash</option>
+        </select>
+        <br>
+        <label for="date">Datum</label>
+        <input type="date" name="date" id="date">
+        <br>
+        <label for="agree">Agree</label>
+        <input type="checkbox" name="agree" id="agree" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Vraag 8</h2>
+    <form action="" method="post">
+        <label for="name">Naam</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <select name="boeken" id="boeken" required>
+            <option value="">Geen boek</option>
+            <option value="Boek 1">Boek 1</option>
+            <option value="Boek 2">Boek 2</option>
+            <option value="Boek 3">Boek 3</option>
+            <option value="Boek 4">Boek 4</option>
+            <option value="Boek 5">Boek 5</option>
+            <option value="Boek 6">Boek 6</option>
+            <option value="Boek 7">Boek 7</option>
+            <option value="Boek 8">Boek 8</option>
+        </select>
+        <br>
+        <select name="boeken" id="boeken">
+            <option value="">Geen boek</option>
+            <option value="Boek 1">Boek 1</option>
+            <option value="Boek 2">Boek 2</option>
+            <option value="Boek 3">Boek 3</option>
+            <option value="Boek 4">Boek 4</option>
+            <option value="Boek 5">Boek 5</option>
+            <option value="Boek 6">Boek 6</option>
+            <option value="Boek 7">Boek 7</option>
+            <option value="Boek 8">Boek 8</option>
+        </select>
+        <br>
+        <select name="boeken" id="boeken">
+            <option value="">Geen boek</option>
+            <option value="Boek 1">Boek 1</option>
+            <option value="Boek 2">Boek 2</option>
+            <option value="Boek 3">Boek 3</option>
+            <option value="Boek 4">Boek 4</option>
+            <option value="Boek 5">Boek 5</option>
+            <option value="Boek 6">Boek 6</option>
+            <option value="Boek 7">Boek 7</option>
+            <option value="Boek 8">Boek 8</option>
+        </select>
+        <br>
+        <select name="boeken" id="boeken">
+            <option value="">Geen boek</option>
+            <option value="Boek 1">Boek 1</option>
+            <option value="Boek 2">Boek 2</option>
+            <option value="Boek 3">Boek 3</option>
+            <option value="Boek 4">Boek 4</option>
+            <option value="Boek 5">Boek 5</option>
+            <option value="Boek 6">Boek 6</option>
+            <option value="Boek 7">Boek 7</option>
+            <option value="Boek 8">Boek 8</option>
+        </select>
+        <br>
+        <select name="boeken" id="boeken">
+            <option value="">Geen boek</option>
+            <option value="Boek 1">Boek 1</option>
+            <option value="Boek 2">Boek 2</option>
+            <option value="Boek 3">Boek 3</option>
+            <option value="Boek 4">Boek 4</option>
+            <option value="Boek 5">Boek 5</option>
+            <option value="Boek 6">Boek 6</option>
+            <option value="Boek 7">Boek 7</option>
+            <option value="Boek 8">Boek 8</option>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Vraag 10</h2>
+    <h3>&#60;table&#62;</h3>
+    <p>Dit is het element dat alle overige elementen overkapt dat met table te maken heeft. Dit gebruik je als je een
+        2-d table wilt maken dat bestaat uit rows en columns waarin cells zitten die data kunnen bevatten.</p>
+    <h3>&#60;thead&#62;</h3>
+    <p>Dit element is het overkoepelende element voor de th elementen, dit is de ruimte voor de headers van de table.
+    </p>
+    <h3>&#60;tbody&#62;</h3>
+    <p>Net als de html body, is dit de ruimte voor de werkelijke inhoud van de table. Hierin gaat de tr elementen.</p>
+    <h3>&#60;tfoot&#62;</h3>
+    <p>Hierin gaat het voetstuk van de table, dit kan bijvoorbeeld zijn het totaal bedrag als het gaat om een factuur
+        etc.</p>
+    <h3>&#60;th tr td&#62;</h3>
+    <p>De th definieert een cell als een header va een groep cellen in een table. De tr element definieert een row cells
+        in een table. Het td element difinieert een cell van een table dat data bevat.</p>
+
+    <h2>Vraag 11</h2>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Voornaam</th>
+                <th scope="col">Achternaam</th>
+                <th scope="col">Leeftijd</th>
+                <th scope="col">Telefoon#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>41</td>
+                <td>+31 6 153234536</td>
+            </tr>
+            <tr>
+                <td>Steven</td>
+                <td>Smith</td>
+                <td>32</td>
+                <td>+31 6 153234536</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>41</td>
+                <td>+31 6 153234536</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Vraag 12</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>MA</th>
+                <th>DI</th>
+                <th>WO</th>
+                <th>DO</th>
+                <th>VR</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Afspraak met tandarts</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Sporten</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Huiswerk maken</td>
+                <td>Werken</td>
+                <td>Werken</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Afspraak met tandarts</td>
+                <td></td>
+                <td></td>
+                <td>Werken</td>
+                <td>Bij vrienden</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Vraag 13</h2>
+    <p>Met colspan en rowspan kan je de reikwijdte van de column/row vergroten.</p>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="1"></th>
+                <th colspan="1">Sport</th>
+                <th colspan="2">Aantal recreanten</th>
+                <th colspan="2">Aantal competitie spelers</th>
+                <th colspan="2">Totale deelnemers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Badminton</td>
+                <td colspan="2">10</td>
+                <td colspan="2">30</td>
+                <td colspan="2">40</td>
+            </tr>
+            <tr>
+                <td>Racket sport</td>
+                <td>Tafeltennis</td>
+                <td colspan="2">59</td>
+                <td colspan="2">30</td>
+                <td colspan="2">89</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Tennis</td>
+                <td colspan="2">159</td>
+                <td colspan="2">130</td>
+                <td colspan="2">189</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Voetbal</td>
+                <td colspan="2">88</td>
+                <td colspan="2">40</td>
+                <td colspan="2">128</td>
+            </tr>
+            <tr>
+                <td>Balsport</td>
+                <td>Basketbal</td>
+                <td colspan="2">60</td>
+                <td colspan="2">40</td>
+                <td colspan="2">100</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Volleybal</td>
+                <td colspan="2">35</td>
+                <td colspan="2">20</td>
+                <td colspan="2">55</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

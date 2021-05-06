@@ -1,0 +1,4 @@
+1.	Wat is het verschil tussen het internet en het world wide web?
+	Het internet kun je meer zien als de infrastructuur. En het World Wide Web als de service van informatie bovenop die service.
+
+2.	HTML is een markup language en wordt gebruikt om de content 

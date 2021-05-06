@@ -1,0 +1,97 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: rgb(255, 243, 228);
+}
+
+/* Left side */
+body > div {
+    width: 40%;
+    margin-left: 10%;
+    float: left;
+}
+
+div > div {
+    background-image: url('https://techcrunch.com/wp-content/uploads/2015/04/codecode.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid blue;
+}
+
+/* related with div > p + div */
+#image-cropper {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 100px;
+    border: 5px solid blue;
+}
+
+#profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+div > * {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 125px;
+}
+
+/* related with image-cropper */
+div > p + div {
+    background-image: unset;
+    background-size: unset;
+    background-repeat: unset;
+    border-bottom: unset;
+}
+
+div > a {
+    display: block;
+    font-size: 1.5rem;
+}
+
+a + p {
+    width: 70%;
+    font-size: 1.3rem;
+    color: darkgray;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#numbers {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div > span {
+    font-size: 1.3rem;
+    display: inline-block;
+}
+
+span i {
+    margin-right: 5px;
+}
+
+img {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Right side */
+body > div + div * {
+    text-align: left;
+}
