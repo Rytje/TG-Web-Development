@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div { color: white;}
+        div { color: red;}
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Styling die je toepast wordt toegepast in een bepaalde volgorde. Het kan voorkomen dat je styling toepast en
+        vervolgens niet het gewenste resultaat ziet. Cascade en Inheritance zijn belangrijke concepten om te begrijpen
+        hoe styling werkt. Lees hier in de officiële documentatie meer over cascade en inheritance.
+        Zoek ook andere referenties om het concept te begrijpen.
+    </h1>
+    <div>
+        <p>In eigen woorden wordt met cascade bedoelt dat de rules van boven naar beneden gaan. Dus als je ergens bovenin je
+            css de color van alle h1's rood maakt, en vervolgens ergens onderin de css de h1 groen maakt, en de specificity
+            van de selectors is even groot, dan is het eindresultaat groen.
+        </p>
+        <p>
+            Inheritance wilt zeggen dat sommige properties door de descendants wordt overgenomen van de parent. Een voorbeeld van een property die inherit wordt van de parent is color.
+        </p>
+        <p>De gebruikte code is:</p>
+        <code>
+            div { color: white;}
+            div { color: red;}
+        </code>
+    </div>
+</body>
+
+</html>

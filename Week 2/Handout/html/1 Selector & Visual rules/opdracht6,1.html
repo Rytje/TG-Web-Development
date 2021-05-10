@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div > p {
+            color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Title</h2>
+    <div>
+        <p>paragraph in een div</p>
+        <section>
+            <p>paragraph in een section</p>
+        </section>
+    </div>
+
+    <p>Child verschilt met descendant in de zin dat alleen directe children worden geselecteerd, de p in de section wordt niet rood omdat deze niet een directe afstammeling is van de div. Een voordeel hiervan is dat je specifieker kan zijn in het selecteren van descendant elementen. Hieronder volgt de gebruikte css.</p>
+    <code>
+            div > p {
+                color: red;
+            }
+    </code>
+</body>
+
+</html>
