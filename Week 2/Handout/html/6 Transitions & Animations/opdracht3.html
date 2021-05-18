@@ -29,10 +29,20 @@
             transition: border-radius 3.0s, margin-left 3.0s cubic-bezier(.22,.89,.47,.96), background-color 3.0s;
         }
         div:hover > div:nth-of-type(2){
-            transition: border-radius 3.0s, margin-left 3.0s ease-in-out, background-color 3.0s;
+            border-radius: 25%;
+            transition: border-radius 3.0s, margin-left 3.0s linear, background-color 3.0s;
         }
         div:hover > div:nth-of-type(3){
+            border-radius: unset;
             transition: border-radius 3.0s, margin-left 3.0s ease-out, background-color 3.0s;
+        }
+        div:hover > div:nth-of-type(4){
+            border-radius: unset;
+            transition: border-radius 3.0s, margin-left 3.0s ease-in-out, background-color 3.0s;
+        }
+        div:hover > div:nth-of-type(5){
+            border-radius: unset;
+            transition: border-radius 3.0s, margin-left 3.0s cubic-bezier(.66,1.25,.35,-0.21), background-color 3.0s;
         }
         /*div > div:nth-of-type(1):active{
             border-radius: 50%;
