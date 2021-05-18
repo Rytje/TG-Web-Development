@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-    background-image: url("/CSS-test/space.jpg");
+    background-image: url("/Handout/images/space.jpg");
     height: 100%;
     background-attachment: fixed;
     background-size: cover;
@@ -29,7 +29,7 @@ body {
 .logo {
     height: 80px;
     width: 80px;
-    background-image: url("/CSS-test/spaceship.png");
+    background-image: url(/Handout/images/spaceship.png);
     background-size: contain;
     background-repeat: no-repeat;
     display: inline-block;
