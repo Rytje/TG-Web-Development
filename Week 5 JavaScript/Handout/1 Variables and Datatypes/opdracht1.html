@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Opdracht 1.1</h1>
+    <h2>We onderzoeken het verschil tussen var, let en const. Gegeven zijn een aantal voorbeelden - schrijf eerst je
+        verwachtingen op voordat je ze zelf nabootst. Kijk vervolgens wat er bij jou in de console gelogd wordt - is dat
+        wat je verwachtte? Zo nee, deel het dan aan het einde van de dag met je groep.</h2>
+    <h2>a)</h2>
+    <p>Ik denk dat "Let Tekst Twee!" gelogt zal worden.</p>
+    <h2>b)</h2>
+    <p>Ik denk dat "Let Tekst" eerst wordt gelogt, en daarna "Let Tekst Twee!"</p>
+    <h2>c)</h2>
+    <p>Ik denk dat "Const Tekst" wordt gelogt, misschien 2x, misschien krijgt de tweede een error.</p>
+    <h2>d)</h2>
+    <p>Ik denk dat de eerste log undefined geeft, de tweede "Var Tekst Twee!" en de derde "Var Tekst Drie!" of een error
+        dat deze variable al bestaat.</p>
+
+    <script>
+        // a
+        let letOefening = "Let Tekst"
+        let letOefening = "Let Tekst Twee!"
+        console.log(letOefening)
+
+        // b
+        let letOefening = "Let Tekst"
+        console.log(letOefening)
+
+        let letOefening = "Let Tekst Twee!"
+        console.log(letOefening)
+
+        // c
+        const constOefening = "Const Tekst";
+        console.log(constOefening)
+
+        constOefening = "Const Tekst Twee!";
+        console.log(constOefening)
+
+        // d
+        varOefening = "Var Tekst";
+        console.log(varOefening)
+
+        var varOefening = "Var Tekst Twee!";
+        console.log(varOefening);
+
+        var varOefening = "Var Tekst Drie!";
+        console.log(varOefening);
+    </script>
+</body>
+
+</html>
