@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Opdracht 2</h1>
+    <h2>a) Wat doet substring() als het eerste getal hoger is dan het tweede getal?</h2>
+    <p>Het lijkt erop dat hij zelf de getallen omdraait. Of de waarden werkelijk van achter naar voren leest, maar van links naar rechts returnt.</p>
+    <h2>b) Wat doet slice() als het eerste getal hoger is dan het tweede getal?</h2>
+    <p>Slice returnt een lege string.</p>
+    <h2>c) Wat doet substring() bij negatieve waardes?</h2>
+    <p>Returnt een lege string</p>
+    <h2>d) Wat doet slice() bij negatieve waardes?</h2>
+    <p>Returnt een lege string</p>
+
+    <script>
+        // a & b
+        // let text = "Rode rozen zijn rood";
+        // console.log(text.substring(0, 4));
+        // console.log(text.slice(4, 0));
+
+        // c & d
+        let text = "Rode rozen zijn rood";
+        console.log(text.substring(-5, -10));
+        console.log(text.slice(-5, -10));
+    </script>
+</body>
+
+</html>
