@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Opdracht 1</h1>
+    <h2>a) Wat is het verschil tussen == en ===?</h2>
+    <p>== controleert alleen of de waarde gelijk is, === controleert of de waarde EN datatype gelijk is.</p>
+    <h2>b) Wat is het verschil tussen > en >=? En tussen &#62; en &#60;=?</h2>
+    <p>> controleert of de waarde groter is dan, >= controleert of de waarde groter OF gelijk is aan, &#60; en &#60;=
+        doen hetzelfde alleen dan voor kleinder dan.</p>
+    <h3>Soms worden deze in combinatie gebruikt. Gegeven volgende code:</h3>
+    <h2>c) Schrijf de If conditie zo, dat je alleen Results ziet als x==4 en y==8</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>d) Schrijf het nu zo dat je alleen Results ziet als x==4 OF y==8</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>e) Zet nu de console.log(“Results”) in een Else { } na de If. Kan je de conditie omdraaien zodat je alsnog Results te zien krijgt?</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>f) Kan je het vorige antwoord ook geven zonder || te gebruiken?</h2>
+    <p>Ja, als je de operator van || naar && verandert krijg je als resultaat nog steeds dat de code in de else wordt uitgevoerd.</p>
+    <h3>Schrijf voor de volgende opdrachten 1 If/Else die 1 variabele waarde controleert, en zorg voor het volgende:</h3>
+    <h2>g) Log het in je console als de waarde groter dan 5 EN kleiner dan 10 is.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>Test of je bij alle uitkomsten kan komen. Verandert er iets als je alle If/Else omzet in aparte If blokken?</h2>
+    <p>Ik kan bij alle uitkomsten komen, als je alles in if blokken verandert worden alle if's gecheckt, met else if worden de blokken onder de else niet gecheckt als het huidige succesvol is.</p>
+
+
+    <script>
+        // c
+        // let x = 4;
+        // let y = 8;
+        // if (x == 4 &&  y == 8) {
+        //     console.log("Result!");
+        // }
+
+        // d
+        // let x = 4;
+        // let y = 8;
+        // if (x == 4 ||  y == 8) {
+        //     console.log("Result!");
+        // }
+
+        // e
+        // let x = 4;
+        // let y = 8;
+        // if (x != 4 ||  y != 8) {
+        //     
+        // }
+        // else console.log("Result!");
+
+        // f
+        // let x = 4;
+        // let y = 8;
+        // if (x != 4 && y != 8) {
+            
+        // }
+        // else console.log("Result!");
+
+        // g t/m j
+        let waarde = 41;
+
+        if (waarde > 5 && waarde < 10) {
+            console.log("waarde is groter dan 5 EN kleiner dan 10");            
+        } else if (waarde >= 11 && waarde <= 20) {
+            console.log("waarde is 11 of groter EN 20 of kleiner");            
+        } else if (waarde == 21 || waarde == 23){
+            console.log("waarde is 21 of 23");
+        } else if (waarde < 35 || waarde > 40 && waarde < 45){
+            console.log("waarde is kleiner dan 35 OF groter dan 40 EN kleiner dan 45");
+        }
+
+
+    </script>
+</body>
+
+</html>

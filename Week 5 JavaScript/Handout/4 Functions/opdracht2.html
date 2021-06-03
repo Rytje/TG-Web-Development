@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Opdracht 2</h1>
+    <h2 class="vraag">a)
+        <pre>
+            Onderzoek de volgende DOM methodes en gebruik ze in een voorbeeld:
+            document.getElementsByClassName
+            document.getElementsByTagName
+            document.querySelector
+            document.querySelectorAll
+            element.innerHTML
+            element.innerText
+        </pre>
+    </h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+
+    <h2 class="vraag">
+        b) Bij opdracht 4.1c heb je een input als parameter meegegeven. Roep die functie nu aan met een oninput ipv
+        onchange, en console.log() de parameter.value ipv de parameter. Zie je het verschil in beide gevallen?
+    </h2>
+    <p>Ga terug naar de HTML pagina van opdracht 1 van hoofdstuk 4.</p>
+
+    <script>
+        // a
+        let elementsA1 = document.getElementsByClassName("vraag")
+        console.log(elementsA1);
+
+        let elementsA2 = document.getElementsByTagName("pre");
+        console.log(elementsA2);
+
+        let elementsA3 = document.querySelector("h2");
+        console.log(elementsA3);
+
+        let elementsA4 = document.querySelectorAll("h2");
+        console.log(elementsA4);
+
+        let elementsA5 = elementsA3.innerHTML;
+        console.log(elementsA5);
+
+        let elementsA6 = elementsA3.innerText;
+        console.log(elementsA6);
+    </script>
+</body>
+
+</html>

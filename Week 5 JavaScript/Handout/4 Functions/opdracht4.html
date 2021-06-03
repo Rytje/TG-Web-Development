@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Opdracht 4</h1>
+    <h2>a) Schrijf een functie waar je een naam aan mee kan geven. Laat de naam vergelijken met de namen van mensen in
+        je groepje. Wanneer je functie de naam wel/niet herkent moet dat als boodschap teruggegeven worden.</h2>
+        <input type="text" name="" id="inputName" onchange="checkName()">
+
+    <script>
+        // a
+        let inputName = document.getElementById("inputName");
+        function checkName(){
+            switch(inputName.value){
+                case "Ryno":
+                    console.log("That's a team mate!");
+                    break;
+                case "Manon":
+                console.log("That's a team mate!");
+                    break;
+                case "Joeri":
+                console.log("That's a team mate!");
+                    break;
+                    case "Kate":
+                console.log("That's a team mate!");
+                    break;
+                default:
+                    console.log("Who dat?");
+                    break;
+            }
+            // console.log(inputName.value);
+        }
+    </script>
+</body>
+
+</html>

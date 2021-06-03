@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Opdracht 1</h1>
+    <h2>a) Maak een button en verbind er een functie aan. Zorg ervoor dat de functie in de console “Hello World”
+        logt.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <button onclick="functionA()">Button</button>
+
+    <h2>b) Maak een input element en geef het een bepaald ID. Sla dat ID op in een variabele via
+        document.GetElementByID().</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <input type="text" name="" id="idB">
+
+    <h2>c) Maak een functie met een parameter die deze in de console logt. Geef de ID variabele hier aan mee. Wat zie
+        je in de console?</h2>
+    <p>Het hele element wordt gelogd</p>
+
+    <h2>d) Geef je functie een return waarde, bijvoorbeeld de parameter * 2. Maak vervolgens een nieuwe variabele
+        “result”. Roep je functie op met een getal als parameter en wijs de return waarde toe aan “result”. Log de
+        variabele daarna in je console.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+
+
+    <!-- Opdracht 2 -->
+    <h1>Opdracht 2</h1>
+    <h2 class="vraag">a)
+        <pre>
+            Onderzoek de volgende DOM methodes en gebruik ze in een voorbeeld:
+            document.getElementsByClassName
+            document.getElementsByTagName
+            document.querySelector
+            document.querySelectorAll
+            element.innerHTML
+            element.innerText
+        </pre>
+    </h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+
+    <h2 class="vraag">
+        b) Bij opdracht 4.1c heb je een input als parameter meegegeven. Roep die functie nu aan met een oninput ipv
+        onchange, en console.log() de parameter.value ipv de parameter. Zie je het verschil in beide gevallen?
+    </h2>
+    <input type="text" name="" id="idB2" oninput="functionC2()">
+    <p>Als je .value gebruikt krijg je de inhoud van het element, en niet het element zelf.</p>
+
+    <script>
+        // Opdracht 1
+        // 1a
+        function functionA() {
+            console.log("Hello World");
+        }
+
+        // 1b
+        let idB = document.getElementById("idB");
+
+        // 1c
+        function functionC(param) {
+            console.log(param);
+        }
+
+        functionC(idB);
+
+        // 1d
+        function functionD(param) {
+            return param * 2;
+        }
+
+        let result = functionD(4);
+        console.log(result);
+
+
+
+        // Opdracht 2
+        // 2a
+        let elementsA1 = document.getElementsByClassName("vraag")
+        console.log(elementsA1);
+
+        let elementsA2 = document.getElementsByTagName("pre");
+        console.log(elementsA2);
+
+        let elementsA3 = document.querySelector("h2");
+        console.log(elementsA3);
+
+        let elementsA4 = document.querySelectorAll("h2");
+        console.log(elementsA4);
+
+        let elementsA5 = elementsA3.innerHTML;
+        console.log(elementsA5);
+
+        let elementsA6 = elementsA3.innerText;
+        console.log(elementsA6);
+
+
+        // 2b
+        let idB2 = document.getElementById("idB2");
+
+        function functionC2() {
+            console.log(idB2.value);
+        }
+
+    </script>
+</body>
+
+</html>

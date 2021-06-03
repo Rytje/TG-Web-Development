@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Opdracht 3</h1>
+    <h3>Eerder heb je kennis gemaakt met het String object en de built-in String Methods. Nu gaan we kennismaken met nog
+        zo een - het Math object. Het Math object heeft namelijk ook methods die bij functies erg veel gebruikt worden:
+    </h3>
+    <h2>a) Maak een functie randomNumber() en verbindt die aan een button. Zorg dat de functie Math.random() in de
+        console logt. Wat merk je op als je deze meerdere keren gebruikt?</h2>
+    <p>Bij elke klik komt er een nieuw getal onder de 1</p>
+    <button id="buttonA" onclick="randomNumber()">Button</button>
+
+    <h2>Verander je functie nu dat hij een parameter x gebruikt, en zorg dat hij het volgende in je console logt:
+        Math.floor(Math.random() * x). Test nu je functie met verschillende waardes voor x. Valt iets je op?</h2>
+    <p>De waarden zijn 0 of 1 minder dan de parameter die je invult</p>
+    <button id="buttonA" onclick="randomNumberB(4)">Button</button>
+
+    <h2>Er zijn nog 2 belangrijke Math methods die handig zijn om te kennen. Onderzoek wat Math.min() en Math.max()
+        doen. Kan je van beide al een voorbeeld geven?</h2>
+        <p>Met Math.max() krijg je de grootste waarde terug uit de parameters die je mee geeft.</p>
+        <p>Met Math.min() krijg je de kleinste waarde terug uit de parameters die je mee geeft.</p>
+
+
+    <script>
+        // a
+        function randomNumber() {
+            console.log(Math.random());
+        }
+
+        // b
+        function randomNumberB(x) {
+            console.log(Math.floor(Math.random() * x));
+        }
+
+        // c
+        console.log(Math.max(0, 100, -100, 4, 120, 110));
+
+        console.log(Math.min(0, 100, -100, 4, 120, 110, -50));
+    </script>
+</body>
+
+</html>

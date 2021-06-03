@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Opdracht 1</h1>
+    <h2>
+        a)
+        <pre>
+            Schrijf een If/Else blok die een eigen variabele controleert:
+            Gelijk aan 3?
+            Groter dan 4?
+            Groter dan 11?
+            Kleiner dan 3?
+        </pre>
+    </h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>b) Test je variabele met 2, 3, 4, 5 en 20. Gebeurt er iets onverwachts?</h2>
+    <p>Bij 4 wordt niks gelogt, maar dat had ik wel verwacht, en groter dan 11 wordt niet getriggert als je 20 invult
+        omdat hij dan eerst groter dan 4 triggert en niet meer verder kijkt. Dat kan als ongewest worden ervaren.</p>
+    <h2>
+        c)
+        <pre>
+            Schrijf een If/Else die een variabele op numerieke waarde controleert, en de passende maand in je console
+            logt.
+            Januari
+            Februari
+            Maart
+            April
+            Mei
+            Juni
+            Juli
+            Augustus
+            September
+            October
+            November
+            December
+            Andere getallen loggen “Geen geldige maand!”.
+
+        </pre>
+    </h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>d) Bouw nu opdracht C met een Switch/case</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h3>Gegeven de volgende code:</h3>
+    <h2>e) Herschrijf dit als een Ternary Operator</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+
+    <script>
+        // a
+        // let waarde = 20;
+        // if (waarde == 3) {
+        //     console.log("waarde is gelijk aan 3");
+        // } else if (waarde > 4) {
+        //     console.log("groter dan 4");
+        // } else if (waarde > 11) {
+        //     console.log("groter dan 11");
+        // } else if (waarde < 3) {
+        //     console.log("kleiner dan 3");
+        // }
+
+        // c
+        // let waarde = 0;
+        // if(waarde <= 0 || waarde > 12) {
+        //     console.log("Geen geldige maand!");
+        // } else if(waarde == 1){
+        //     console.log("Januari");
+        // } else if(waarde == 2){
+        //     console.log("Februari");
+        // } else if(waarde == 3){
+        //     console.log("Maart");
+        // } else if(waarde == 4){
+        //     console.log("April");
+        // } else if(waarde == 5){
+        //     console.log("Mei");
+        // } else if(waarde == 6){
+        //     console.log("Juni");
+        // } else if(waarde == 7){
+        //     console.log("Juli");
+        // } else if(waarde == 8){
+        //     console.log("Augustus");
+        // } else if(waarde == 9){
+        //     console.log("September");
+        // } else if(waarde == 10){
+        //     console.log("Oktober");
+        // } else if(waarde == 11){
+        //     console.log("November");
+        // } else if(waarde == 12){
+        //     console.log("December");
+        // }
+
+        // d
+        // let key = 13;
+        // switch (key) {
+        //     case 1:
+        //         console.log("Januari");
+        //         break;
+        //     case 2:
+        //         console.log("Februari");
+        //         break;
+        //     case 3:
+        //         console.log("Maart");
+        //         break;
+        //     case 4:
+        //         console.log("April");
+        //         break;
+        //     case 5:
+        //         console.log("Mei");
+        //         break;
+        //     case 6:
+        //         console.log("Juni");
+        //         break;
+        //     case 7:
+        //         console.log("Juli");
+        //         break;
+        //     case 8:
+        //         console.log("Augustus");
+        //         break;
+        //     case 9:
+        //         console.log("September");
+        //         break;
+        //     case 10:
+        //         console.log("Oktober");
+        //         break;
+        //     case 11:
+        //         console.log("November");
+        //         break;
+        //     case 12:
+        //         console.log("December");
+        //         break;
+        //     default:
+        //         console.log("Geen geldige maand!");
+        //         break;
+        // }
+
+        // e
+
+        let x = 3;
+        let results;
+
+        x <= 4 && x >= 0 ? results = 2 : results = 5;
+        console.log(results);
+
+    </script>
+</body>
+
+</html>
