@@ -12,31 +12,94 @@
     <h1>Opdracht 4</h1>
     <h2>a) Schrijf een functie waar je een naam aan mee kan geven. Laat de naam vergelijken met de namen van mensen in
         je groepje. Wanneer je functie de naam wel/niet herkent moet dat als boodschap teruggegeven worden.</h2>
-        <input type="text" name="" id="inputName" onchange="checkName()">
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <input type="text" name="" id="inputName" onchange="checkName()">
+    <h2>b) Schrijf een 2e functie die de eerste functie aanroept, en vervolgens de teruggegeven boodschap in een div
+        element op je pagina toont. Denk aan de DOM methods!</h2>
+        <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+        <button id="gen-text-button" onclick="showResult()">Generate div with text</button>
+        <h2>c) Schrijf nu het bovenstaande nogmaals, maar gebruik dit keer Arrow Functions. Als het niet overal lukt is dat niet erg!</h2>
+        <button id="arrow-text-button" onclick="test(checkName())">Arrow function</button>
+        <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+
 
     <script>
         // a
         let inputName = document.getElementById("inputName");
-        function checkName(){
-            switch(inputName.value){
+        function checkName() {
+            let result;
+            switch (inputName.value) {
                 case "Ryno":
                     console.log("That's a team mate!");
+                    result = "That's a team mate!";
                     break;
                 case "Manon":
-                console.log("That's a team mate!");
+                    console.log("That's a team mate!");
+                    result = "That's a team mate!";
                     break;
                 case "Joeri":
-                console.log("That's a team mate!");
+                    console.log("That's a team mate!");
+                    result = "That's a team mate!";
                     break;
-                    case "Kate":
-                console.log("That's a team mate!");
+                case "Kate":
+                    console.log("That's a team mate!");
+                    result = "That's a team mate!";
+                    break;
+                case "":
+                    console.log("Enter a name in the text input above");
+                    result = "Enter a name in the text input above";
                     break;
                 default:
                     console.log("Who dat?");
+                    result = "Who dat?";
                     break;
             }
-            // console.log(inputName.value);
+            return result;
         }
+
+
+        // b
+        function showResult() {
+            const newDiv = document.createElement("div");
+            const newContent = document.createTextNode(checkName());
+            newDiv.appendChild(newContent);
+
+            const neighbor = document.getElementById("gen-text-button");
+            document.body.insertBefore(newDiv, neighbor);
+        }
+
+        // c
+        let test = (result)=> {
+            let text = result;
+            const newDiv = document.createElement("div");
+            const newContent = document.createTextNode(text);
+            newDiv.appendChild(newContent);
+
+            const neighbor = document.getElementById("arrow-text-button");
+            document.body.insertBefore(newDiv, neighbor);
+        }
+
+        // test
+        // let array = [182, "Blink", 8, "test"];
+
+        // for (let index = 0; index < array.length; index++) {
+        //     const element = array[index];
+        //     console.log(element);
+        // }
+
+        // for (const index in array) {
+        //     console.log(index);
+        // }
+
+        // for (const item of array) {
+        //     console.log(item);
+        // }
+        let pets = ["Bird", "Dog", "Cat"];
+        console.log(pets.length);
+        let outdoorPets = pets.slice(1,2);
+        console.log(outdoorPets);
+        console.log(pets);
+        console.log(pets.sort());
     </script>
 </body>
 

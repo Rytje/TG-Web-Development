@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Opdracht 1</h1>
+    <h3>We oefenen met Arrays.</h3>
+    <h2>a) Maak een array met 1 t/m 10 in willekeurige volgorde en log dit.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>b) Maak een array met Appel, Aardbei en 3 andere fruitsoorten. Log dit.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>c) Gebruik de indexwaarde om Appel en Aardbei in de console te loggen.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>d) Gebruik Math.random() en Math.floor() om een random indexwaarde van je array met getallen te selecteren.
+        Gebruik dat getal vervolgens als index om een fruitsoort te selecteren en log dit.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>e) Console log de length property van je fruitsoorten array.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>f) Fix de vorige error met modulo en de lengte.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>g) Verander “Appel” naar “Peer”</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>h) Verwissel “Peer” en “Aardbei” van positie. Kan je dit ook al met/zonder Array method?</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+
+
+    <script>
+        // a
+        let arrayA = [1, 2, 5, 4, 3, 6, 9, 7, 8, 10];
+        console.log(arrayA);
+
+        // b
+        let arrayB = ["Appel", "Aardbei", "Banaan", "Sinaasappel", "Perzik"]
+        console.log(arrayB);
+
+        // c
+        console.log(arrayB[0] + " " + arrayB[1]);
+
+        // d
+        // console.log(arrayB[Math.random() * 5]);
+        let indexD;
+        indexD = Math.random();
+        console.log(indexD);
+        indexD = Math.floor(indexD * 5);
+        console.log(indexD);
+        console.log(arrayB[indexD]);
+
+        // e
+        console.log("Fruitsoorten array is length: " + arrayB.length);
+
+        // f
+        let indexF;
+        indexF = Math.floor(Math.random() * 10);
+        indexF = indexF % arrayB.length;
+        console.log(indexF);
+
+        // g
+        let arrayG = arrayB;
+        arrayG[0] = "Peer";
+        console.log(arrayG[0]);
+
+        // h
+        // zonder array methods
+        let oldValue;
+        let arrayH = arrayG;
+        oldValue = arrayH[0];
+        console.log(arrayH);
+        arrayH[0] = arrayH[1];
+        arrayH[1] = oldValue;
+        console.log(arrayH);
+
+        // met array methods
+        let arrayH2 = arrayG;
+        let element1 = arrayH2.shift();
+        let element2 = arrayH2.shift();
+        // console.log(element1);
+        // console.log(element2);
+        arrayH2.unshift(element2);
+        arrayH2.unshift(element1);
+        console.log(arrayH2);
+    </script>
+</body>
+
+</html>
