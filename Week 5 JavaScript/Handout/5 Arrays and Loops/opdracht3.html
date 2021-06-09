@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Opdracht 3</h1>
+    <h3>We oefenen met Array Methods. Gegeven het volgende array:</h3>
+    <h2>a) Voeg Zeilen en Zwemmen toe aan het einde van het array</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>b) Voeg Volleybal toe aan het begin van het array</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>c) Maak een nieuw array ballSports, met de balsporten uit dutchSports</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>d) Verwijder die items uit dutchSports.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>e) Sorteer het dutchSports array.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>f) Log elk item in de console.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+    <h2>g) Maak een nieuw array sportsLength, met daarin de lengte van elk item in het dutchSports array.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+
+
+    <script>
+        // a
+        const dutchSports = ["Voetbal", "Hockey", "Schaatsen"];
+        dutchSports.push("Zeilen", "Zwemmen");
+        // console.log(dutchSports);
+
+        // b
+        dutchSports.unshift("Volleybal");
+        // console.log(dutchSports);
+
+        // c
+        // let test = "test";
+        // console.log(test);
+        // test = ["hoi", "doei"];
+        // console.log(test);
+        // const test = "test";
+        // console.log(test);
+        // test = ["hoi", "doei"];
+        // console.log(test);
+
+        const ballSports = ["Voetbal", "Volleybal"];
+
+        // d
+        dutchSports.splice(0, 2)
+        // console.log(dutchSports);
+
+        // e
+        // console.log(dutchSports);
+        dutchSports.sort();
+        // console.log(dutchSports);
+
+        // f
+        // for (const iterator of dutchSports) {
+        //     console.log(iterator);
+        // }
+
+        // dutchSports.forEach(element => {
+        //     console.log(element);
+        // });
+
+        // for (const key in dutchSports) {
+        //     if (Object.hasOwnProperty.call(dutchSports, key)) {
+        //         const element = dutchSports[key];
+        //         console.log(element);
+        //     }
+        // }
+
+        for (let i = 0; i < dutchSports.length; i++){
+            console.log(dutchSports[i]);
+        }
+
+        // g
+        const sportsLength = [];
+
+        dutchSports.forEach(element => {
+            console.log(element.length);
+            sportsLength.push(element.length)
+        });
+
+    </script>
+</body>
+
+</html>
