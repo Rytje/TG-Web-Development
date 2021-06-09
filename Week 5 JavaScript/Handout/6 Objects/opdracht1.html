@@ -11,17 +11,100 @@
 <body>
     <h1>Opdracht 1</h1>
     <h3>We oefenen met het aanmaken van Objects.</h3>
-    <h2>Maak meerdere objects Pet met een naam en een soort. Maak een ander dier met elk van de 5 soorten constructor
+    <h2>a) Maak meerdere objects Pet met een naam en een soort. Maak een ander dier met elk van de 5 soorten constructor
         uit de voorbeelden en log deze in de console.Zie je een onverwachte property?</h2>
-
+    <p>Ja, __proto__: Object</p>
+    <h2>b) Gebruik Object.create() om een Object aan te maken. Doe dit voor elke Pet die je in de vorige opdracht hebt
+        gemaakt, en log ze in de console. Valt er iets op aan de prototype?</h2>
+    <p>Het object zit nu in een ander object, en het prototype is soms van een ander type lijkt het.</p>
+    <h2>c) Maak een array met 10 Person Objects, die een naam en leeftijd hebben. Gebruik vervolgens Array methods om je
+        personen te sorteren op leeftijd.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
 
 
     <script>
-        let hond = new Object();
-        hond.name = "Maruko";
-        hond.age = 7;
-        hond.country = "Japan";
-        console.log(hond);
+        // a
+        let dog = new Object();
+        dog.name = "Maruko";
+        dog.age = 7;
+        dog.kind = "Dog";
+        console.log(dog);
+
+
+        let cat = {
+            name: "Torajiro",
+            age: 7,
+            kind: "Cat"
+        }
+        console.log(cat);
+
+
+        function Bird(name, age, kind) {
+            this.name = name;
+            this.age = age;
+            this.kind = kind;
+        }
+        let bird = new Bird("Beni", 7, "Bird");
+        console.log(bird);
+
+
+        let turtle = new function () {
+            this.name = "Kame";
+            this.age = 7;
+            this.kind = "Turtle";
+        }
+        console.log(turtle);
+
+
+        class Fish {
+            constructor(name, age, kind) {
+                this.name = name;
+                this.age = age;
+                this.kind = kind;
+            }
+
+            breathe() {
+                console.log("Blub Blub");
+            }
+        }
+        let fish = new Fish("Koi", 7, "Fish");
+        fish.breathe();
+        console.log(fish);
+
+
+        // b
+        let petObject = Object.create(dog);
+        console.log(petObject);
+
+        let petObject2 = Object.create(cat);
+        console.log(petObject2);
+
+        let petObject3 = Object.create(bird);
+        console.log(petObject3);
+
+        let petObject4 = Object.create(turtle);
+        console.log(petObject4);
+
+        let petObject5 = Object.create(fish);
+        console.log(petObject5);
+
+
+        // c
+        const persons = [];
+        persons.push({name: "Ryno", age: 27});
+        persons.push({name: "Manon", age: 64});
+        persons.push({name: "Kate", age: 76});
+        persons.push({name: "Joeri", age: 644});
+        persons.push({name: "Elias", age: 35});
+        persons.push({name: "Adriaan", age: 73});
+        persons.push({name: "Bert", age: 11});
+        persons.push({name: "Charif", age: 34});
+        persons.push({name: "Daan", age: 68});
+        persons.push({name: "Eddy", age: 73});
+        console.log(persons);
+        // persons.sort(function(a, b) { return a.age - b.age});
+        console.log(persons);
+        persons.sort(function(a, b) { return a.age - b.age});
     </script>
 </body>
 

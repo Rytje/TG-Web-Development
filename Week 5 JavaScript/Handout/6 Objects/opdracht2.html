@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>opdracht 2</h1>
+    <h3>We oefenen met nested Objects.</h3>
+    <h2>
+        <pre>
+            a) Maak een Club object dat het volgende bijhoudt:
+            Naam
+            Type club
+            Aantal :Leden
+        </pre>
+    </h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+
+    <h2>
+        <pre>
+            b) Maak een Contactinformatie object aan en voeg die toe aan elk Club object. De Contactinformatie houdt het
+            volgende bij:
+            Adres
+            Telefoonnummer
+            Contactpersoon
+        </pre>
+    </h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+
+    <h2>c) Maak een array met 5 verschillende Clubs aan. Itereer door het array heen en log voor elke Club de naam, het telefoonnummer en de contactpersoon.</h2>
+    <p>Zie source code van deze pagina tussen de script tag onderaan de body.</p>
+
+
+    <script>
+        // a b & c
+        class Club {
+            constructor(name, type, members, contactInfo) {
+                this.name = name;
+                this.type = type;
+                this.members = members;
+                this.contactInfo = contactInfo;
+            }
+        }
+
+        let contactInfoAjax = {
+            adres: "Amsterdam",
+            phoneNr: 694857465,
+            contact: "Mr. Football"
+        }
+        let contactInfoArchery = {
+            adres: "Rotterdam",
+            phoneNr: 6758476674,
+            contact: "Robin Hood"
+        }
+        let contactInfoGDC = {
+            adres: "Diemen-Zuid",
+            phoneNr: 6586576848,
+            contact: "Shaker"
+        }
+
+        let ajax = new Club("Ajax", "Football", 11, contactInfoAjax);
+        let bowNarrow = new Club("Bow & Arrow", "Archery", 25, contactInfoArchery);
+        let gdc = new Club("Global Dance Centre", "Dance", 1000, contactInfoGDC);
+
+        const array = [ajax, bowNarrow, gdc];
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+            console.log(element.name);
+            console.log(element.contactInfo.phoneNr);
+            console.log(element.contactInfo.contact);
+        }
+
+    </script>
+</body>
+
+</html>
