@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+#result {
+    border: 2px solid black;
+    height: 50px;
+}
+
+#result + div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    width: 25%;
+    height: 75px;
+}
