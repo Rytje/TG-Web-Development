@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        //Misschien ben je al bekend met de Reeks van Fibonacci; een getallenreeks 
+        //waarbij elk getal een optelsom van de vorige 2 is: 0,1, 1, 2, 3, 5, 8, 13 etc. 
+        //Deze reeks heeft even en oneven getallen.
+        //Zoek een optelsom van alle even getallen onder de vier miljoen in de Reeks van Fibonacci
+
+
+        let n1 = 0, n2 = 1, nextterm;
+
+
+        //Even getellen
+        let fibonacci = [0, 1];
+        let evenGetallen = [];
+        let optelSom = 0;
+
+        for (let i = 0; i < 4000000; i++) {
+
+            n1 = n2;
+            n2 = nextterm;
+
+            let nextNumber = fibonacci[i + 1] + fibonacci[i];
+            fibonacci.push(nextNumber);
+
+            if (nextNumber % 2 == 0 && nextNumber < 4000000) {
+                evenGetallen.push(nextNumber);
+
+                // optelSom = nextnumber[i] + [i];
+
+            }
+        }
+
+        for (let k = 0; k < evenGetallen.length; k++) {
+            // const element = evenGetallen[k];
+            // optelSom = evenGetallen[k] + evenGetallen[k + 1];
+            optelSom += evenGetallen[k];
+        }
+
+
+        // console.log(fibonacci);
+        console.log(evenGetallen);
+        console.log("Optelsom = " + optelSom);
+
+//Oneven getallen
+
+
+    </script>
+</body>
+
+</html>
