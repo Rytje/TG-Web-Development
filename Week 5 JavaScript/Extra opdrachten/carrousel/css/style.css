@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+.view {
+    width: 800px;
+    height: 500px;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2.5%;
+}
+
+.arrow {
+    height: 500px;
+    width: 50px;
+    display: flex;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    user-select: none;
+}
+
+.arrow + .arrow {
+    right: 0;
+    top: 0;
+    left: unset;
+}
+
+.arrow:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+img {
+    width: 800px;
+    height: 500px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
