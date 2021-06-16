@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #7E7E7E;
+}
+
+h1, h2 {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 90px;
+    font-weight: 400;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+button {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0px 0px 1px 2px white;
+    background-color: #01FC7F;
+}
+
+button:nth-of-type(2){
+    background-color: #E3AB41;
+}
+
+button:nth-of-type(3){
+    background-color: #E5533E;
+}
+
+.screen > div {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ring {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    background-color: #808080;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.5);
+}
+
+.inner-ring {
+    position: relative;
+    display: inline-block;
+    height: 450px;
+    width: 450px;
+    border-radius: 50%;
+    margin-top: 25px;
+    margin-left: 25px;
+    background-color: #B2B2B2;
+}
+
+.screen {
+    position: relative;
+    display: inline-block;
+    height: 420px;
+    width: 420px;
+    margin-top: 15px;
+    margin-left: 15px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 10px rgba(0, 0, 0, 0.85);
+    background-color: black;
+}
