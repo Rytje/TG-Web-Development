@@ -52,6 +52,7 @@ let questionBox1 = document.createElement("h2");
 questionBox1.className = "questionBox";
 questionBox1.innerText = "What is 49 - 32";
 let ball1 = document.createElement("span");
+ball1.className = "ball";
 ball1.innerText = 1;
 let answer1 = document.createElement("p");
 answer1.innerText = "13";
@@ -59,12 +60,24 @@ answer1.setAttribute("onclick", "answerClick(1, this)");
 let answer2 = document.createElement("p");
 answer2.innerText = "17";
 answer2.setAttribute("onclick", "answerClick(1, this)");
+let ball2 = document.createElement("span");
+ball2.className = "ball";
+ball2.innerText = 2;
+let ball3 = document.createElement("span");
+ball3.className = "ball";
+ball3.innerText = 3;
 let answer3 = document.createElement("p");
 answer3.innerText = "-17";
 answer3.setAttribute("onclick", "answerClick(1, this)");
 let answer4 = document.createElement("p");
 answer4.innerText = "16";
 answer4.setAttribute("onclick", "answerClick(1, this)");
+let ball4 = document.createElement("span");
+ball4.className = "ball";
+ball4.innerText = 4;
+let ball5 = document.createElement("span");
+ball5.className = "ball";
+ball5.innerText = 5;
 let answer5 = document.createElement("p");
 answer5.innerText = "697";
 answer5.setAttribute("onclick", "answerClick(1, this)");
@@ -72,8 +85,12 @@ question1content.appendChild(questionBox1);
 question1content.appendChild(ball1);
 question1content.appendChild(answer1);
 question1content.appendChild(answer2);
+question1content.appendChild(ball2);
+question1content.appendChild(ball3);
 question1content.appendChild(answer3);
 question1content.appendChild(answer4);
+question1content.appendChild(ball4);
+question1content.appendChild(ball5);
 question1content.appendChild(answer5);
 
 // question 2 content
@@ -159,8 +176,8 @@ question4content.appendChild(questionBox4);
 question4content.appendChild(ball16);
 question4content.appendChild(answer16);
 question4content.appendChild(answer17);
-question4content.appendChild(answer17);
 question4content.appendChild(answer18);
+question4content.appendChild(answer19);
 question4content.appendChild(answer20);
 
 // question 5 content
@@ -235,10 +252,12 @@ question4content.style.display = "none";
 question5content.style.display = "none";
 question6content.style.display = "none";
 
+// result stuff
 let givenAnswers = [undefined, undefined, undefined, undefined, undefined, undefined];
 let correctAnswersCount = 0;
 
 let resultText = document.createElement("p");
+resultText.className = "finish-text";
 finishScreen.appendChild(resultText);
 let restartButton = document.createElement("button");
 restartButton.innerText = "Restart";
@@ -246,6 +265,7 @@ restartButton.setAttribute("onclick", "restartButtonClick()");
 finishScreen.appendChild(restartButton);
 
 
+// functions
 function startButtonClick() {
     startButton.style.display = "none";
     quizScreen.style.display = "block";
@@ -253,7 +273,8 @@ function startButtonClick() {
     nextButton.style.display = "inline-block";
 }
 
-function restartButtonClick(){
+function restartButtonClick() {
+    location.reload();
     correctAnswersCount = 0;
     givenAnswers = [undefined, undefined, undefined, undefined, undefined, undefined];
     startButton.style.display = "block";
@@ -265,8 +286,8 @@ function restartButtonClick(){
 
 function previousButtonClick() {
     if (pagina >= 2 && pagina <= 6) {
-        questionsArray[pagina-2].style.display = "block";
-        questionsArray[pagina-1].style.display = "none";
+        questionsArray[pagina - 2].style.display = "block";
+        questionsArray[pagina - 1].style.display = "none";
         pagina--;
         progressText.innerText = pagina + "/6";
     }
@@ -275,10 +296,10 @@ function previousButtonClick() {
 function nextButtonClick() {
     if (pagina >= 1 && pagina <= 5 && givenAnswers[pagina - 1] !== undefined) {
         questionsArray[pagina].style.display = "block";
-        questionsArray[pagina-1].style.display = "none";
+        questionsArray[pagina - 1].style.display = "none";
         pagina++;
         progressText.innerText = pagina + "/6";
-    } else if (pagina === 6 && givenAnswers[pagina -1] !== undefined){
+    } else if (pagina === 6 && givenAnswers[pagina - 1] !== undefined) {
         console.log("finish");
         resultText.innerText = "Gefeliciteerd je hebt " + correctAnswersCount + " van de 6 vragen goed.";
         quizScreen.style.display = "none";
@@ -288,11 +309,11 @@ function nextButtonClick() {
     }
 }
 
-function answerClick(question, element){
-    switch (question){
+function answerClick(question, element) {
+    switch (question) {
         case 1:
             givenAnswers[question - 1] = element.innerText;
-            if(element.innerText == 17){
+            if (element.innerText == 17) {
                 element.style.backgroundColor = "green";
                 answer1.style.pointerEvents = "none";
                 answer2.style.pointerEvents = "none";
@@ -311,110 +332,110 @@ function answerClick(question, element){
                 answer5.style.pointerEvents = "none";
             }
             break;
-            case 2:
-                givenAnswers[question - 1] = element.innerText;
-                if(element.innerText == 56){
-                    element.style.backgroundColor = "green";
-                    answer6.style.pointerEvents = "none";
-                    answer7.style.pointerEvents = "none";
-                    answer8.style.pointerEvents = "none";
-                    answer9.style.pointerEvents = "none";
-                    answer10.style.pointerEvents = "none";
-                    correctAnswersCount++;
-                }
-                else {
-                    element.style.backgroundColor = "red";
-                    answer8.style.backgroundColor = "green";
-                    answer6.style.pointerEvents = "none";
-                    answer7.style.pointerEvents = "none";
-                    answer8.style.pointerEvents = "none";
-                    answer9.style.pointerEvents = "none";
-                    answer10.style.pointerEvents = "none";
-                }
-                break;
-                case 3:
-                    givenAnswers[question - 1] = element.innerText;
-                    if(element.innerText == 65){
-                        element.style.backgroundColor = "green";
-                        answer11.style.pointerEvents = "none";
-                        answer12.style.pointerEvents = "none";
-                        answer13.style.pointerEvents = "none";
-                        answer14.style.pointerEvents = "none";
-                        answer15.style.pointerEvents = "none";
-                        correctAnswersCount++;
-                    }
-                    else {
-                        element.style.backgroundColor = "red";
-                        answer14.style.backgroundColor = "green";
-                        answer11.style.pointerEvents = "none";
-                        answer12.style.pointerEvents = "none";
-                        answer13.style.pointerEvents = "none";
-                        answer14.style.pointerEvents = "none";
-                        answer15.style.pointerEvents = "none";
-                    }
-                    break;
-                    case 4:
-                        givenAnswers[question - 1] = element.innerText;
-                        if(element.innerText == 65){
-                            element.style.backgroundColor = "green";
-                            answer16.style.pointerEvents = "none";
-                            answer17.style.pointerEvents = "none";
-                            answer18.style.pointerEvents = "none";
-                            answer19.style.pointerEvents = "none";
-                            answer20.style.pointerEvents = "none";
-                            correctAnswersCount++;
-                        }
-                        else {
-                            element.style.backgroundColor = "red";
-                            answer20.style.backgroundColor = "green";
-                            answer16.style.pointerEvents = "none";
-                            answer17.style.pointerEvents = "none";
-                            answer18.style.pointerEvents = "none";
-                            answer19.style.pointerEvents = "none";
-                            answer20.style.pointerEvents = "none";
-                        }
-                        break;
-                        case 5:
-                            givenAnswers[question - 1] = element.innerText;
-                            if(element.innerText == 67){
-                                element.style.backgroundColor = "green";
-                                answer21.style.pointerEvents = "none";
-                                answer22.style.pointerEvents = "none";
-                                answer23.style.pointerEvents = "none";
-                                answer24.style.pointerEvents = "none";
-                                answer25.style.pointerEvents = "none";
-                                correctAnswersCount++;
-                            }
-                            else {
-                                element.style.backgroundColor = "red";
-                                answer22.style.backgroundColor = "green";
-                                answer21.style.pointerEvents = "none";
-                                answer22.style.pointerEvents = "none";
-                                answer23.style.pointerEvents = "none";
-                                answer24.style.pointerEvents = "none";
-                                answer25.style.pointerEvents = "none";
-                            }
-                            break;
-                            case 6:
-                                givenAnswers[question - 1] = element.innerText;
-                                if(element.innerText == 5){
-                                    element.style.backgroundColor = "green";
-                                    answer26.style.pointerEvents = "none";
-                                    answer27.style.pointerEvents = "none";
-                                    answer28.style.pointerEvents = "none";
-                                    answer29.style.pointerEvents = "none";
-                                    answer30.style.pointerEvents = "none";
-                                    correctAnswersCount++;
-                                }
-                                else {
-                                    element.style.backgroundColor = "red";
-                                    answer26.style.backgroundColor = "green";
-                                    answer26.style.pointerEvents = "none";
-                                    answer27.style.pointerEvents = "none";
-                                    answer28.style.pointerEvents = "none";
-                                    answer29.style.pointerEvents = "none";
-                                    answer30.style.pointerEvents = "none";
-                                }
-                                break;
+        case 2:
+            givenAnswers[question - 1] = element.innerText;
+            if (element.innerText == 56) {
+                element.style.backgroundColor = "green";
+                answer6.style.pointerEvents = "none";
+                answer7.style.pointerEvents = "none";
+                answer8.style.pointerEvents = "none";
+                answer9.style.pointerEvents = "none";
+                answer10.style.pointerEvents = "none";
+                correctAnswersCount++;
+            }
+            else {
+                element.style.backgroundColor = "red";
+                answer8.style.backgroundColor = "green";
+                answer6.style.pointerEvents = "none";
+                answer7.style.pointerEvents = "none";
+                answer8.style.pointerEvents = "none";
+                answer9.style.pointerEvents = "none";
+                answer10.style.pointerEvents = "none";
+            }
+            break;
+        case 3:
+            givenAnswers[question - 1] = element.innerText;
+            if (element.innerText == 65) {
+                element.style.backgroundColor = "green";
+                answer11.style.pointerEvents = "none";
+                answer12.style.pointerEvents = "none";
+                answer13.style.pointerEvents = "none";
+                answer14.style.pointerEvents = "none";
+                answer15.style.pointerEvents = "none";
+                correctAnswersCount++;
+            }
+            else {
+                element.style.backgroundColor = "red";
+                answer14.style.backgroundColor = "green";
+                answer11.style.pointerEvents = "none";
+                answer12.style.pointerEvents = "none";
+                answer13.style.pointerEvents = "none";
+                answer14.style.pointerEvents = "none";
+                answer15.style.pointerEvents = "none";
+            }
+            break;
+        case 4:
+            givenAnswers[question - 1] = element.innerText;
+            if (element.innerText == 65) {
+                element.style.backgroundColor = "green";
+                answer16.style.pointerEvents = "none";
+                answer17.style.pointerEvents = "none";
+                answer18.style.pointerEvents = "none";
+                answer19.style.pointerEvents = "none";
+                answer20.style.pointerEvents = "none";
+                correctAnswersCount++;
+            }
+            else {
+                element.style.backgroundColor = "red";
+                answer20.style.backgroundColor = "green";
+                answer16.style.pointerEvents = "none";
+                answer17.style.pointerEvents = "none";
+                answer18.style.pointerEvents = "none";
+                answer19.style.pointerEvents = "none";
+                answer20.style.pointerEvents = "none";
+            }
+            break;
+        case 5:
+            givenAnswers[question - 1] = element.innerText;
+            if (element.innerText == 67) {
+                element.style.backgroundColor = "green";
+                answer21.style.pointerEvents = "none";
+                answer22.style.pointerEvents = "none";
+                answer23.style.pointerEvents = "none";
+                answer24.style.pointerEvents = "none";
+                answer25.style.pointerEvents = "none";
+                correctAnswersCount++;
+            }
+            else {
+                element.style.backgroundColor = "red";
+                answer22.style.backgroundColor = "green";
+                answer21.style.pointerEvents = "none";
+                answer22.style.pointerEvents = "none";
+                answer23.style.pointerEvents = "none";
+                answer24.style.pointerEvents = "none";
+                answer25.style.pointerEvents = "none";
+            }
+            break;
+        case 6:
+            givenAnswers[question - 1] = element.innerText;
+            if (element.innerText == 5) {
+                element.style.backgroundColor = "green";
+                answer26.style.pointerEvents = "none";
+                answer27.style.pointerEvents = "none";
+                answer28.style.pointerEvents = "none";
+                answer29.style.pointerEvents = "none";
+                answer30.style.pointerEvents = "none";
+                correctAnswersCount++;
+            }
+            else {
+                element.style.backgroundColor = "red";
+                answer26.style.backgroundColor = "green";
+                answer26.style.pointerEvents = "none";
+                answer27.style.pointerEvents = "none";
+                answer28.style.pointerEvents = "none";
+                answer29.style.pointerEvents = "none";
+                answer30.style.pointerEvents = "none";
+            }
+            break;
     }
 }
