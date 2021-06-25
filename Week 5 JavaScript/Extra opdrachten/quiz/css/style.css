@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
 * {
     box-sizing: border-box;
     font-family: 'Indie Flower', cursive;
 }
 
 /* Start Button */
-div > button {
+
+div>button {
     display: block;
     width: 100px;
     height: 75px;
@@ -19,7 +19,7 @@ div > button {
     margin-right: auto;
 }
 
-div > button:nth-of-type(2) {
+div>button:nth-of-type(2) {
     display: none;
     height: 10vh;
     width: 10%;
@@ -29,22 +29,20 @@ div > button:nth-of-type(2) {
     background-color: #04BCBD;
 }
 
-div > button:nth-of-type(2):hover {
+div>button:nth-of-type(2):hover {
     background-color: aqua;
 }
 
-div > button:nth-of-type(3) {
+div>button:nth-of-type(3) {
     display: none;
     height: 10vh;
     width: 10%;
     background-color: #04BCBD;
 }
 
-div > button:nth-of-type(3):hover {
+div>button:nth-of-type(3):hover {
     background-color: aqua;
 }
-
-
 
 #quiz-screen {
     width: 50vw;
@@ -63,7 +61,7 @@ h1 {
     margin-bottom: 0px;
 }
 
-h1 + span {
+h1+span {
     display: block;
     text-align: center;
     font-size: 25px;
@@ -79,21 +77,6 @@ h1 + span {
     font-size: 35px;
     line-height: 15vh;
 }
-
-/* .questionBox + span { */
-    /* display: inline-block;
-    text-align: center;
-    background-color: white;
-    border-radius: 50%; */
-    /* width: 50px;
-    height: 50px; */
-    /* width: 10%;
-    height: 8vh;
-    font-size: 25px;
-    margin-top: 1vh;
-    margin-right: 5%;
-    margin-left: 5%; */
-/* } */
 
 .ball {
     display: inline-block;
@@ -121,6 +104,11 @@ p {
     margin-right: 5%;
     margin-bottom: 1vh;
     margin-left: 5%;
+    /* -webkit-mask-image: radial-gradient(circle at 50% 60%, black 50%, rgba(0, 0, 0, 0.6) 50%);
+    mask-image: radial-gradient(circle at 50% 60%, black 50%, rgba(0, 0, 0, 0.6) 50%);
+    mask-size: 100%;
+    mask-position: right;
+    mask-repeat: no-repeat; */
 }
 
 .finish-text {
