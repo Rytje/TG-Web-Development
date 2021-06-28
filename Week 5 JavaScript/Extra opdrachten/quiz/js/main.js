@@ -399,6 +399,12 @@ function answerClick(question, element) {
             givenAnswers[question - 1] = element.innerText;
             if (element.innerText == 17) {
                 element.style.backgroundColor = "green";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "green";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "green";
+                }
                 answer1.style.pointerEvents = "none";
                 answer2.style.pointerEvents = "none";
                 answer3.style.pointerEvents = "none";
@@ -408,7 +414,14 @@ function answerClick(question, element) {
             }
             else {
                 element.style.backgroundColor = "red";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "red";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "red";
+                }
                 answer2.style.backgroundColor = "green";
+                ball2.style.backgroundColor = "green";
                 answer1.style.pointerEvents = "none";
                 answer2.style.pointerEvents = "none";
                 answer3.style.pointerEvents = "none";
@@ -420,6 +433,12 @@ function answerClick(question, element) {
             givenAnswers[question - 1] = element.innerText;
             if (element.innerText == 56) {
                 element.style.backgroundColor = "green";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "green";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "green";
+                }
                 answer6.style.pointerEvents = "none";
                 answer7.style.pointerEvents = "none";
                 answer8.style.pointerEvents = "none";
@@ -429,7 +448,14 @@ function answerClick(question, element) {
             }
             else {
                 element.style.backgroundColor = "red";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "red";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "red";
+                }
                 answer8.style.backgroundColor = "green";
+                ball8.style.backgroundColor = "green";
                 answer6.style.pointerEvents = "none";
                 answer7.style.pointerEvents = "none";
                 answer8.style.pointerEvents = "none";
@@ -441,6 +467,12 @@ function answerClick(question, element) {
             givenAnswers[question - 1] = element.innerText;
             if (element.innerText == 65) {
                 element.style.backgroundColor = "green";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "green";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "green";
+                }
                 answer11.style.pointerEvents = "none";
                 answer12.style.pointerEvents = "none";
                 answer13.style.pointerEvents = "none";
@@ -450,7 +482,14 @@ function answerClick(question, element) {
             }
             else {
                 element.style.backgroundColor = "red";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "red";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "red";
+                }
                 answer14.style.backgroundColor = "green";
+                ball14.style.backgroundColor = "green";
                 answer11.style.pointerEvents = "none";
                 answer12.style.pointerEvents = "none";
                 answer13.style.pointerEvents = "none";
@@ -462,6 +501,12 @@ function answerClick(question, element) {
             givenAnswers[question - 1] = element.innerText;
             if (element.innerText == -10) {
                 element.style.backgroundColor = "green";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "green";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "green";
+                }
                 answer16.style.pointerEvents = "none";
                 answer17.style.pointerEvents = "none";
                 answer18.style.pointerEvents = "none";
@@ -471,7 +516,14 @@ function answerClick(question, element) {
             }
             else {
                 element.style.backgroundColor = "red";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "red";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "red";
+                }
                 answer20.style.backgroundColor = "green";
+                ball20.style.backgroundColor = "green";
                 answer16.style.pointerEvents = "none";
                 answer17.style.pointerEvents = "none";
                 answer18.style.pointerEvents = "none";
@@ -483,6 +535,12 @@ function answerClick(question, element) {
             givenAnswers[question - 1] = element.innerText;
             if (element.innerText == 67) {
                 element.style.backgroundColor = "green";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "green";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "green";
+                }
                 answer21.style.pointerEvents = "none";
                 answer22.style.pointerEvents = "none";
                 answer23.style.pointerEvents = "none";
@@ -492,7 +550,14 @@ function answerClick(question, element) {
             }
             else {
                 element.style.backgroundColor = "red";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "red";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "red";
+                }
                 answer22.style.backgroundColor = "green";
+                ball22.style.backgroundColor = "green";
                 answer21.style.pointerEvents = "none";
                 answer22.style.pointerEvents = "none";
                 answer23.style.pointerEvents = "none";
@@ -504,6 +569,12 @@ function answerClick(question, element) {
             givenAnswers[question - 1] = element.innerText;
             if (element.innerText == 5) {
                 element.style.backgroundColor = "green";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "green";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "green";
+                }
                 answer26.style.pointerEvents = "none";
                 answer27.style.pointerEvents = "none";
                 answer28.style.pointerEvents = "none";
@@ -513,7 +584,14 @@ function answerClick(question, element) {
             }
             else {
                 element.style.backgroundColor = "red";
+                if (element.previousElementSibling.tagName == "SPAN"){
+                    element.previousElementSibling.style.backgroundColor = "red";
+                }
+                else if (element.nextElementSibling.tagName == "SPAN"){
+                    element.nextElementSibling.style.backgroundColor = "red";
+                }
                 answer26.style.backgroundColor = "green";
+                ball26.style.backgroundColor = "green";
                 answer26.style.pointerEvents = "none";
                 answer27.style.pointerEvents = "none";
                 answer28.style.pointerEvents = "none";

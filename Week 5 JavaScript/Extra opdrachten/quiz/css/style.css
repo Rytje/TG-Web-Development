@@ -93,23 +93,51 @@ h1+span {
     margin-left: 5%;
 }
 
-p {
+#quiz-screen p {
     display: inline-block;
     width: 70%;
-    height: 7vh;
+    height: 8vh;
     font-size: 25px;
     background-color: white;
-    /* border-radius: 25px 0 0 25px; */
     margin-top: 1vh;
     margin-right: 5%;
     margin-bottom: 1vh;
     margin-left: 5%;
+    cursor: pointer;
     /* -webkit-mask-image: radial-gradient(circle at 50% 60%, black 50%, rgba(0, 0, 0, 0.6) 50%);
     mask-image: radial-gradient(circle at 50% 60%, black 50%, rgba(0, 0, 0, 0.6) 50%);
     mask-size: 100%;
     mask-position: right;
     mask-repeat: no-repeat; */
 }
+
+#quiz-screen p:nth-of-type(1)::before, #quiz-screen p:nth-of-type(3)::before, #quiz-screen p:nth-of-type(5)::before {
+    display: inline-block;
+    color: transparent;
+    height: 9vh;
+    width: 6.5vw;
+    position: relative;
+    background-color: teal;
+    content: ".";
+    top: -0.5vh;
+    right: 3vw;
+    border-radius: 50%;
+}
+
+#quiz-screen p:nth-of-type(2)::after, #quiz-screen p:nth-of-type(4)::after {
+    display: inline-block;
+    color: transparent;
+    height: 9vh;
+    width: 6.5vw;
+    position: relative;
+    background-color: teal;
+    content: ".";
+    top: -0.5vh;
+    left: 89%;
+    left: 30vw;
+    border-radius: 50%;
+}
+
 
 .finish-text {
     display: inline-block;
