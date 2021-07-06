@@ -4,7 +4,7 @@ export default class ClassResult extends Component {
     render() {
         return (
             <div>
-                <p>Hello Class </p>
+                <h2>Hello Class </h2>
             </div>
         )
     }

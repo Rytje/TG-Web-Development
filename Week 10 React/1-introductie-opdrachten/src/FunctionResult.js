@@ -1,10 +1,9 @@
 import React from 'react'
-import Input from './Input'
 
-export default function FunctionResult(props, Input) {
+export default function FunctionResult(props) {
     return (
         <div>
-            <p>Hello Function {props.value}</p>
+            <h2>Hello Function {props.value}</h2>
         </div>
     )
 }

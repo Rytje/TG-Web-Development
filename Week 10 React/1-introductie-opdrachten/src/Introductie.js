@@ -9,7 +9,7 @@ export default function Introductie() {
             <h1>Hello world</h1>
             <Input/>
             <ClassResult/>
-            <FunctionResult  value={"test"} />
+            <FunctionResult  value="test" />
         </div>
     )
 }
