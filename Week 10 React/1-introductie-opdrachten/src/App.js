@@ -1,22 +1,27 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import ClassResult from "./ClassResult";
 import FunctionResult from './FunctionResult'
 
 function App() {
 
-  const input = useState(0);
+  let [input, setInput] = useState("");
+  // let inputElement = document.querySelector("input");
+  useEffect(() => {
+
+  });
+
+  let myFunction = (event) => {
+    // console.log(event.target.value);
+    setInput(event.target.value);
+  }
 
   return (
     <div>
-      <input onChange = {takeInput}></input>
-      <ClassResult />
-      <FunctionResult />
+      <input onChange={myFunction}></input>
+      <ClassResult content={input} />
+      <FunctionResult value={input} />
     </div>
   );
-}
-
-function takeInput(){
-  console.log("test");
 }
 
 export default App;
