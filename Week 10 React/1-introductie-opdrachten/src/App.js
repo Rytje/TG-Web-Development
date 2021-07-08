@@ -4,20 +4,21 @@ import FunctionResult from './FunctionResult'
 
 function App() {
 
-  let [input, setInput] = useState("");
+  const [input, setInput] = useState("");
   // let inputElement = document.querySelector("input");
   useEffect(() => {
 
   });
 
-  let myFunction = (event) => {
-    // console.log(event.target.value);
+  let arrowFunction = (event) => setInput(event.target.value);
+
+  function inputHandler (event){
     setInput(event.target.value);
   }
 
   return (
     <div>
-      <input onChange={myFunction}></input>
+      <input onChange={inputHandler}></input>
       <ClassResult content={input} />
       <FunctionResult value={input} />
     </div>

@@ -1,15 +1,13 @@
 import React from 'react'
-import Input from './Input'
-import ClassResult from './ClassResult'
-import FunctionResult from './FunctionResult'
+import ClassComponent from './ClassComponent'
+import FunctionComponent from './FunctionComponent'
 
 export default function Introductie() {
     return (
         <div>
             <h1>Hello world</h1>
-            <Input/>
-            <ClassResult/>
-            <FunctionResult  value="test" />
+            <ClassComponent />
+            <FunctionComponent />
         </div>
     )
 }
