@@ -6,7 +6,7 @@ import Introductie from './Introductie';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
     <Introductie />
   </React.StrictMode>,
   document.getElementById('root')

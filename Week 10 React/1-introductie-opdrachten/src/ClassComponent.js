@@ -14,8 +14,9 @@ export default class ClassComponent extends Component {
 
         return (
             <div>
-                <h2>Class Component + input: {this.state.input}</h2>
-                <input onChange = {handleInput} />
+                {/* <h2>Class Component + input: {this.state.input}</h2> */}
+                <h2>Class Component + input: {this.props.state}</h2>
+                <input onChange = {this.props.onChange} value = {this.props.state} />
             </div>
         )
     }
