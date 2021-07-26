@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 export default function FunctionComponent(props) {
 
-    const [input, setinput] = useState("")
+    const [input, setinput] = useState("");
 
     function handleInput(event){
         setinput(event.target.value);
