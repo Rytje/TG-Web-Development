@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import ListItem from './ListItem';
+import {v4 as uuidv4} from 'uuid'
 
 export default function ListAndKeys(props) {
 
@@ -18,8 +19,13 @@ export default function ListAndKeys(props) {
         let input = document.querySelector("input");
         setNames(prevState =>{
             // let state = [...prevState];
-            let state = [];
-            state.push(input.value, ...prevState);
+            // let state = [];
+            // state.push(input.value, ...prevState);
+
+            let state = [{id: uuidv4(), name: input.value}, ...prevState];
+
+            console.log(state);
+
             // state.push([...prevState]);
             return state;
         });
@@ -30,7 +36,10 @@ export default function ListAndKeys(props) {
             <input id="input" />
             <br/>
             <button onClick={handleInput}>Sumbit</button>
-            {names.map(name => <div key={name.toString()}>{name}</div>)}
+            {/* <ul>
+            {names.map(name => <li key={names.id}>{name}</li>)}
+            </ul> */}
+            <ListItem names = {names} />
         </div>
     )
 }
