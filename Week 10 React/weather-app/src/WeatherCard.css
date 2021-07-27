@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    width: 30%;
+    height: 500px;
+    border: 3px solid red;
+    border-radius: 25px;
+    background-image: url('https://cdn-images.welcometothejungle.com/zGs6lBTz3waXqIumSi51ea0qGSoHOgCYCUZesbj0xfM/rs:auto:2000::/q:85/czM6Ly93dHRqLXByb2R1Y3Rpb24vdXBsb2Fkcy9hcnRpY2xlL2ltYWdlLzAwNTUvMTU1ODcwL0Ftc3RlcmRhbS0yLmpwZw');
+    background-size: cover;
+    background-position: center;
+}
+
+.card>h2 {
+    width: 80%;
+    font-size: 3rem;
+    text-align: center;
+    color: gray;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card>h3 {
+    text-align: end;
+    margin-right: 5%;
+    font-size: 3.5rem;
+}
+
+.card>div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.card>div>span {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    width: 50%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+.card>div>span:nth-child(even) {
+    text-align: end;
+}
