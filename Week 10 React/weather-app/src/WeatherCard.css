@@ -23,10 +23,21 @@
     margin-right: auto;
 }
 
+img {
+    width: 50%;
+    position: relative;
+    right: 0;
+    top: 0;
+}
+
 .card>h3 {
     text-align: end;
     margin-right: 5%;
     font-size: 3.5rem;
+    /* background-image: url("http://openweathermap.org/img/wn/10d@2x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px; */
 }
 
 .card>div {

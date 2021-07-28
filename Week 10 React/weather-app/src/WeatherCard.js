@@ -4,20 +4,23 @@ import {apiKey} from './secret-file';
 
 export default function WeatherCard(props) {
 
-    const [temperature, setTemperature] = useState("");
-    const [minTemp, setMinTemp] = useState("");
-    const [maxTemp, setMaxTemp] = useState("");
-    const [humidity, setHumidity] = useState("");
+    const [temperature, setTemperature] = useState();
+    const [minTemp, setMinTemp] = useState();
+    const [maxTemp, setMaxTemp] = useState();
+    const [humidity, setHumidity] = useState();
+    const [dataRefresh, setDataRefresh] = useState(0)
 
-    // useEffect(() => {
-    //     effect
-    //     return () => {
-    //         cleanup
-    //     }
-    // }, [input])
+    useEffect(() => {
+        console.log("Do API call for data");
+        setTemperature(Math.floor((Math.random()*30)+1));
+        // getWeatherClick();
+        console.log("Temperature state has been set");
+    }, [dataRefresh]);
 
-    function doLog(){
-        console.log("This is a test log");
+    function doDataUpdate(){
+        setDataRefresh(dataRefresh + 1);
+        // setDataRefresh(dataRefresh + 1)
+        // console.log("dataRefresh state has been set");
     }
 
     function getWeatherClick() {
@@ -41,6 +44,7 @@ export default function WeatherCard(props) {
     return (
         <div className="card">
             <h2>{props.city}</h2>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png"></img>
             <h3>{temperature + "°C"}</h3>
             <div>
                 <span>min. temp</span>
@@ -52,7 +56,7 @@ export default function WeatherCard(props) {
                 <span>humidity</span>
                 <span>{humidity}</span>
             </div>
-            <button onClick={getWeatherClick}>Get weather</button>
+            <button onClick={doDataUpdate}>Get weather</button>
         </div>
     )
 }
