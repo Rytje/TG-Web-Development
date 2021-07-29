@@ -8,6 +8,7 @@ export default function WeatherCard(props) {
     const [minTemp, setMinTemp] = useState();
     const [maxTemp, setMaxTemp] = useState();
     const [humidity, setHumidity] = useState();
+    const [icon, setIcon] = useState();
     const [dataRefresh, setDataRefresh] = useState(0)
 
     useEffect(() => {
@@ -19,33 +20,30 @@ export default function WeatherCard(props) {
 
     function doDataUpdate(){
         setDataRefresh(dataRefresh + 1);
-        // setDataRefresh(dataRefresh + 1)
-        // console.log("dataRefresh state has been set");
     }
 
     function getWeatherClick() {
         console.log("get weather");
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`)
             .then(response => response.json())
-            // .then(data => apiData = data)
-            // .then(()=> console.log(apiData))
             .then(data =>{
                 setTemperature(data.main.temp);
                 setMinTemp(data.main.temp_min);
                 setMaxTemp(data.main.temp_max);
                 setHumidity(data.main.humidity);
+                setIcon(data.weather[0].icon);
             });
-            // .then(data => setTemperature(data.main.temp))
-            // .then(data => setMinTemp(data.main.temp_min))
-            // .then(data => setMaxTemp(data.main.temp_max))
-            // .then(data => setHumidity(data.main.humidity));
+    }
+
+    function openDetails(){
+        console.log("Open details");
     }
 
     return (
-        <div className="card">
+        <div className="card" onClick={openDetails}>
             <h2>{props.city}</h2>
-            <img src="http://openweathermap.org/img/wn/10d@2x.png"></img>
-            <h3>{temperature + "°C"}</h3>
+            <img src={"http://openweathermap.org/img/wn/" + "02d" +"@2x.png"}></img>
+            <h3>{Math.trunc(temperature) + "°C"}</h3>
             <div>
                 <span>min. temp</span>
                 <span>{minTemp}</span>
