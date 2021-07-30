@@ -42,7 +42,7 @@ export default function WeatherCard(props) {
     return (
         <div className="card" onClick={openDetails}>
             <h2>{props.city}</h2>
-            <img src={"http://openweathermap.org/img/wn/" + "02d" +"@2x.png"}></img>
+            <img src={"http://openweathermap.org/img/wn/" + "09d" +"@2x.png"}></img>
             <h3>{Math.trunc(temperature) + "°C"}</h3>
             <div>
                 <span>min. temp</span>
