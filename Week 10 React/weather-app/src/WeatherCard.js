@@ -4,16 +4,16 @@ import {apiKey} from './secret-file';
 
 export default function WeatherCard(props) {
 
-    const [temperature, setTemperature] = useState();
-    const [minTemp, setMinTemp] = useState();
-    const [maxTemp, setMaxTemp] = useState();
-    const [humidity, setHumidity] = useState();
-    const [icon, setIcon] = useState();
+    const [temperature, setTemperature] = useState('no data');
+    const [minTemp, setMinTemp] = useState('no data');
+    const [maxTemp, setMaxTemp] = useState('no data');
+    const [humidity, setHumidity] = useState('no data');
+    const [icon, setIcon] = useState("10d");
     const [dataRefresh, setDataRefresh] = useState(0)
 
     useEffect(() => {
         console.log("Do API call for data");
-        setTemperature(Math.floor((Math.random()*30)+1));
+        // setTemperature(Math.floor((Math.random()*30)+1));
         // getWeatherClick();
         console.log("Temperature state has been set");
     }, [dataRefresh]);
@@ -39,20 +39,22 @@ export default function WeatherCard(props) {
         console.log("Open details");
     }
 
+    if(!temperature) return null;
+
     return (
         <div className="card" onClick={openDetails}>
             <h2>{props.city}</h2>
-            <img src={"http://openweathermap.org/img/wn/" + "09d" +"@2x.png"}></img>
+            <img src={"http://openweathermap.org/img/wn/" + icon +"@2x.png"}></img>
             <h3>{Math.trunc(temperature) + "°C"}</h3>
             <div>
                 <span>min. temp</span>
-                <span>{minTemp}</span>
+                <span>{Math.trunc(minTemp) + "°C"}</span>
 
                 <span>max. temp</span>
-                <span>{maxTemp}</span>
+                <span>{Math.trunc(maxTemp) + "°C"}</span>
 
                 <span>humidity</span>
-                <span>{humidity}</span>
+                <span>{Math.trunc(humidity) + "%"}</span>
             </div>
             <button onClick={doDataUpdate}>Get weather</button>
         </div>
