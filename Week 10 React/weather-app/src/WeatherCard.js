@@ -56,18 +56,18 @@ export default function WeatherCard(props) {
         <div className="card">
             <h2>{props.city}</h2>
             <img src={"http://openweathermap.org/img/wn/" + icon + "@2x.png"}></img>
-            <h3>{Math.trunc(temperature) + "°C"}</h3>
+            <h3>{Math.round(temperature) + "°C"}</h3>
             <div>
                 <span>min. temp</span>
-                <span>{Math.trunc(minTemp) + "°C"}</span>
+                <span>{Math.round(minTemp) + "°C"}</span>
 
                 <span>max. temp</span>
-                <span>{Math.trunc(maxTemp) + "°C"}</span>
+                <span>{Math.round(maxTemp) + "°C"}</span>
 
                 <span>humidity</span>
-                <span>{Math.trunc(humidity) + "%"}</span>
+                <span>{Math.round(humidity) + "%"}</span>
             </div>
-            <button onClick={openDetails}>Get weather</button>
+            <button onClick={openDetails}>More details</button>
         </div>
     )
 }
