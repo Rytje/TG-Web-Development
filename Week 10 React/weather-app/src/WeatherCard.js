@@ -14,14 +14,38 @@ export default function WeatherCard(props) {
     const [latitude, setLatitude] = useState();
 
     useEffect(() => {
-        console.log("Do API call for data");
-        // setTemperature(Math.floor((Math.random()*30)+1));
+        // console.log("Do API call for data");
+        setTemperature(Math.floor((Math.random()*30)+1));
         getWeatherClick();
-        console.log("Temperature state has been set");
+        setBackgroundImage();
     }, [dataRefresh]);
 
     function doDataUpdate() {
         setDataRefresh(dataRefresh + 1);
+    }
+
+    function setBackgroundImage(){
+        let cards = document.getElementsByTagName('h2');
+        let title;
+        let slug;
+        for (let index = 0; index < cards.length; index++) {
+            const element = cards[index];
+            if(element.innerText == props.city){
+                title = element;
+                slug = title.innerText.toLowerCase();
+                fetch(`https://api.teleport.org/api/urban_areas/slug:${slug}/images`)
+                .then(response => response.json())
+                .then(data => {
+                    if(data.photos == undefined){
+                        console.log("can not find background image under " + slug);
+                        return;
+                    }
+                    let bgLink = "url('" +data.photos[0].image.mobile + "')"
+                    title.parentElement.style.backgroundImage = bgLink;
+                })
+            }
+        }
+        // card.style.backgroundImage = "url('https://www.google.com/logos/doodles/2021/get-vaccinated-wear-a-mask-save-lives-august-4-6753651837109295-2xa.gif')";
     }
 
     function getWeatherClick() {

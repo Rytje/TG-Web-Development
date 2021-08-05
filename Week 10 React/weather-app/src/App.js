@@ -16,8 +16,9 @@ function App() {
     return (
       <div className="app">
         <WeatherCard city="Amsterdam" onDetailState={onDetailState} setOnDetailState={setOnDetailState} />
-        {/* <WeatherCard city="London" onDetailState={onDetailState} setOnDetailState={setOnDetailState} /> */}
-        <WeatherCard city="Kaapstad" onDetailState={onDetailState} setOnDetailState={setOnDetailState} />
+        <WeatherCard city="London" onDetailState={onDetailState} setOnDetailState={setOnDetailState} />
+        {/* <WeatherCard city="Kaapstad" onDetailState={onDetailState} setOnDetailState={setOnDetailState} /> */}
+        {/* <WeatherCard city="Kaapstad" onDetailState={onDetailState} setOnDetailState={setOnDetailState} /> */}
         <WeatherCard city="Tokyo" onDetailState={onDetailState} setOnDetailState={setOnDetailState} />
       </div>
     );
