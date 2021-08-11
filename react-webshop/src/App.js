@@ -1,12 +1,22 @@
-import './App.css';
-import TopBar from './TopBar';
+import Homepage from './Homepage';
 
 function App() {
+
+  function Home() {
+    return <h2>Home</h2>;
+  }
+  
+  function About() {
+    return <h2>About</h2>;
+  }
+  
+  function Users() {
+    return <h2>Users</h2>;
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <TopBar />
-      </header>
+    <div>
+        <Homepage />
     </div>
   );
 }
