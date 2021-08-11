@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import "bootswatch/dist/vapor/bootstrap.min.css";
+// TODO: Note: Replace ^[theme]^ (examples: darkly, slate, cosmo, spacelab, and superhero. See https://bootswatch.com for current theme names.)
 import './index.css';
+import bootstrap from 'bootstrap'
 import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
