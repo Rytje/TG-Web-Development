@@ -1,22 +1,14 @@
-import Homepage from './Homepage';
+import Footer from './Components/Layout/Footer';
+import TopBar from './Components/Layout/TopBar';
+import Navigation from './Components/Layout/Navigation';
 
 function App() {
 
-  function Home() {
-    return <h2>Home</h2>;
-  }
-  
-  function About() {
-    return <h2>About</h2>;
-  }
-  
-  function Users() {
-    return <h2>Users</h2>;
-  }
-  
   return (
-    <div>
-        <Homepage />
+    <div class="container-fluid">
+      <TopBar />
+      <Navigation />
+      <Footer />
     </div>
   );
 }
