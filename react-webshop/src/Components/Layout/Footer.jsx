@@ -4,11 +4,11 @@ export default function Footer() {
 
 
     return (
-        <div class="container-fluid">
+        <div className="container-fluid">
 
-            <div class="row">
-                <table class="table mb-0">
-                    <thead class="table-dark">
+            <div className="row">
+                <table className="table mb-0">
+                    <thead className="table-dark">
                         <tr>
                             <th scope="col">Type</th>
                             <th scope="col">Column heading</th>
@@ -17,19 +17,19 @@ export default function Footer() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="table-dark">
+                        <tr className="table-dark">
                             <th scope="row">Dark</th>
                             <td>Column content</td>
                             <td>Column content</td>
                             <td>Column content</td>
                         </tr>
-                        <tr class="table-dark">
+                        <tr className="table-dark">
                             <th scope="row">Dark</th>
                             <td>Column content</td>
                             <td>Column content</td>
                             <td>Column content</td>
                         </tr>
-                        <tr class="table-dark">
+                        <tr className="table-dark">
                             <th scope="row">Dark</th>
                             <td>Column content</td>
                             <td>Column content</td>
