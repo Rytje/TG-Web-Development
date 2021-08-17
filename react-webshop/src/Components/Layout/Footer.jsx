@@ -4,8 +4,6 @@ export default function Footer() {
 
 
     return (
-        <div className="container-fluid">
-
             <div className="row">
                 <table className="table mb-0">
                     <thead className="table-dark">
@@ -38,6 +36,5 @@ export default function Footer() {
                     </tbody>
                 </table>
             </div>
-        </div>
     )
 }

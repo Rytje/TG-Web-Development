@@ -15,13 +15,13 @@ export default function TopBar() {
     return (
         <header className="row mb-5">
             <nav className="navbar navbar-expand-lg navbar-light bg-light col-12">
-                <a className="navbar-brand ms-4" href="/"><img
+                <Link className="navbar-brand ms-4" to="/"><img
                     src={logo}
                     width="150"
                     height="41"
                     className="d-inline-block align-top"
                     alt="React Bootstrap logo"
-                /></a>
+                /></Link>
             </nav>
 
             <div className="row mx-0 px-0">
@@ -31,7 +31,7 @@ export default function TopBar() {
                         <button className="btn btn-secondary" type="submit">Search</button>
                     </form>
                     <div className="col-6 d-flex justify-content-end pe-0">
-                        <Router>
+                        {/* <Router> */}
                             <Link className="col-2 p-0" to="/wishlist">
                                 <button type="button" className="btn btn-primary col-12">Wishlist</button>
                             </Link>
@@ -51,7 +51,7 @@ export default function TopBar() {
                                 </Switch>
                             </div>
 
-                        </Router>
+                        {/* </Router> */}
                     </div>
                 </div>
             </div>

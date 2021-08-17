@@ -13,7 +13,7 @@ import PadsPage from '../Store/PadsPage';
 export default function Navigation() {
     return (
         <div>
-            <Router>
+            {/* <Router> */}
                 <div className="row mb-5 d-flex justify-content-around">
                     <Link className="col-2 p-0" to="/fightsticks">
                         <button className="btn btn-lg btn-secondary col-12" type="button">Fight Sticks</button>
@@ -35,14 +35,15 @@ export default function Navigation() {
                 <div>
                     {/* A <Switch> looks through its children <Route>s and renders the first one that matches the current URL. */}
                     <Switch>
-                        <Route path="/fightsticks" component={FightSticksPage} />
+                        {/* <Route path="/fightsticks" component={FightSticksPage} /> */}
+                        <Route path="/fightsticks"><FightSticksPage /></Route>
                         <Route path="/pads" component={PadsPage} />
-                        <Route path="/" exact component={Homepage} />
+                        <Route path="/" component={Homepage} />
                     </Switch>
                 </div>
 
 
-            </Router>
+            {/* </Router> */}
         </div>
     )
 }
