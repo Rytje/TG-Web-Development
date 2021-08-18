@@ -1,41 +1,41 @@
 import React from 'react'
+import { Link, useRouteMatch } from 'react-router-dom'
+import TopBar from '../Layout/TopBar';
 
 export default function SignUp() {
+
+    let match = useRouteMatch();
+
     return (
         <div className="row">
-            <div class="card mb-3">
-                <h3 class="card-header">Card header</h3>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                </svg>
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-                <div class="card-footer text-muted">
-                    2 days ago
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+            <div className="card col-6 mx-auto mb-3">
+                <h1 className="card-header">Create an account</h1>
+                <div className="card-body">
+
+                    <div className="form-group">
+                        <div className="form-floating mb-3">
+                            <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div className="form-floating mb-3">
+                            <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div className="form-floating">
+                            <input type="password" className="form-control" id="floatingPasswordConfirm" placeholder="Password Confirm" />
+                            <label for="floatingPassword">Password confirm</label>
+                        </div>
+                        <div className="card-body d-flex justify-content-end px-0">
+                            <Link to="/">
+                                <button type="button" className="btn btn-secondary me-3">Back</button>
+                            </Link>
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+
+                    <div className="card-footer">
+                        Already have an account? <Link to={`${match.url}/login`} className="ms-1">Log in</Link>
+                    </div>
                 </div>
             </div>
         </div>

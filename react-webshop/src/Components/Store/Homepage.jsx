@@ -1,9 +1,14 @@
 import React from 'react'
+import Navigation from '../Layout/Navigation'
+import TopBar from '../Layout/TopBar'
 import FeaturedCard from './FeaturedCard'
+import Footer from '../Layout/Footer'
 
 export default function Homepage() {
     return (
         <div>
+            <TopBar />
+            <Navigation />
             <div id="carouselExampleIndicators" className="carousel slide mb-5" data-bs-ride="carousel">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -33,13 +38,15 @@ export default function Homepage() {
 
             <h1 className="ms-5 mb-3">Featured</h1>
             <div className="row d-flex justify-content-evenly">
-                <FeaturedCard />
-                <FeaturedCard />
-                <FeaturedCard />
-                <FeaturedCard />
-                <FeaturedCard />
-                <FeaturedCard />
+                <FeaturedCard brand="Etokki" model="Omni Arcade Stick" edition="White Gold Edition" src="https://www.etokki.com/image/cache/catalog/omni_whitegold_front-500x500.jpg" description="Some quick example text to build on the card title and make up the bulk of the card's content." price="$359.95"/>
+                <FeaturedCard brand="Etokki" model="Omni Arcade Stick" edition="Korean Edition" src="https://www.etokki.com/image/catalog/omni_6s_kr.jpg" description="Some quick example text to build on the card title and make up the bulk of the card's content." price="$359.95"/>
+                <FeaturedCard brand="Etokki" model="Omni Arcade Stick" edition="Sanwa Edition" src="https://www.etokki.com/image/catalog/omni_6_sa.jpg" description="Some quick example text to build on the card title and make up the bulk of the card's content." price="$359.95"/>
+                <FeaturedCard brand="Etokki" model="Omni Arcade Stick" edition="White Gold Edition" src="https://www.etokki.com/image/cache/catalog/omni_whitegold_front-500x500.jpg" description="Some quick example text to build on the card title and make up the bulk of the card's content." price="$359.95"/>
+                <FeaturedCard brand="Etokki" model="Omni Arcade Stick" edition="White Gold Edition" src="https://www.etokki.com/image/cache/catalog/omni_whitegold_front-500x500.jpg" description="Some quick example text to build on the card title and make up the bulk of the card's content." price="$359.95"/>
+                <FeaturedCard brand="Etokki" model="Omni Arcade Stick" edition="White Gold Edition" src="https://www.etokki.com/image/cache/catalog/omni_whitegold_front-500x500.jpg" description="Some quick example text to build on the card title and make up the bulk of the card's content." price="$359.95"/>
             </div>
+        <Footer />
+
         </div>
     )
 }
