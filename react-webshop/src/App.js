@@ -12,6 +12,7 @@ import FightSticksPage from './Components/Store/FightSticksPage';
 import Homepage from './Components/Store/Homepage';
 import StorePage from './Components/Store/StorePage';
 import SignUp from './Components/User/SignUp';
+import UserPage from './Components/User/UserPage';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and renders the first one that matches the current URL. */}
         <Switch>
           {/* <Route path="/fightsticks" component={FightSticksPage} /> */}
-          <Route path="/account"><SignUp /></Route>
+          <Route path="/account"><UserPage /></Route>
           <Route path="/store"><StorePage /></Route>
           {/* <Route path="/fightsticks"><FightSticksPage /></Route> */}
           {/* <Route path="/pads" component={PadsPage} /> */}

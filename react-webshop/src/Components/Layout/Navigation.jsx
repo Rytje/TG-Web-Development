@@ -6,10 +6,6 @@ import {
     Link
 } from "react-router-dom";
 
-import Homepage from '../Store/Homepage'
-import FightSticksPage from '../Store/FightSticksPage';
-import PadsPage from '../Store/PadsPage';
-
 export default function Navigation() {
     return (
         <div>

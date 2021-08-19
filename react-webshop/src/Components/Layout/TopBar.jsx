@@ -35,7 +35,7 @@ export default function TopBar() {
                             <Link className="col-2 p-0" to="/wishlist">
                                 <button type="button" className="btn btn-primary col-12">Wishlist</button>
                             </Link>
-                            <Link className="col-2 p-0" to="/account">
+                            <Link className="col-2 p-0" to="/account/signup">
                                 <button type="button" className="btn btn-primary col-12">Account</button>
                             </Link>
                             <Link className="col-2 p-0" to="/cart">
@@ -45,9 +45,9 @@ export default function TopBar() {
                             <div>
                                 {/* A <Switch> looks through its children <Route>s and renders the first one that matches the current URL. */}
                                 <Switch>
-                                    <Route path="/wishlist" component={WishList} />
-                                    <Route path="/account" component={SignUp} />
-                                    <Route path="/cart" component={Cart} />
+                                    {/* <Route path="/wishlist" component={WishList} /> */}
+                                    {/* <Route path="/account" component={SignUp} /> */}
+                                    {/* <Route path="/cart" component={Cart} /> */}
                                 </Switch>
                             </div>
 

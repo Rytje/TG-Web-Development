@@ -5,6 +5,7 @@ import Navigation from '../Layout/Navigation';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import FightSticksPage from './FightSticksPage';
 import PadsPage from './PadsPage';
+import ProductDetailPage from './ProductDetailPage';
 
 export default function StorePage() {
 
@@ -15,6 +16,7 @@ export default function StorePage() {
             <TopBar />
             <Navigation />
             <Switch>
+                <Route path={`${match.url}/fightsticks/:productId`}><ProductDetailPage /></Route>
                 <Route path={`${match.url}/fightsticks`}><FightSticksPage /></Route>
                 <Route path={`${match.url}/pads`}><PadsPage /></Route>
                 <Route path="/store/buttons"><PadsPage /></Route>
