@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function FeaturedCard({ brand, model, edition, src, description, price, to }) {
+export default function ProductCard({ brand, model, edition, src, description, price, to }) {
 
 
     return (
