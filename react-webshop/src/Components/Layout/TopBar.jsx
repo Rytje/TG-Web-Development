@@ -6,11 +6,11 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import WishList from '../User/WishList'
-import Cart from '../User/Cart'
-import SignUp from '../User/SignUp'
+import { useAuth } from '../../Contexts/AuthContext';
 
 export default function TopBar() {
+
+    const { currentUser } = useAuth();
 
     return (
         <header className="row mb-5">
@@ -35,7 +35,7 @@ export default function TopBar() {
                             <Link className="col-2 p-0" to="/wishlist">
                                 <button type="button" className="btn btn-primary col-12">Wishlist</button>
                             </Link>
-                            <Link className="col-2 p-0" to="/account/signup">
+                            <Link className="col-2 p-0" to={currentUser ? "/account/dashboard" : "/account/signin"}>
                                 <button type="button" className="btn btn-primary col-12">Account</button>
                             </Link>
                             <Link className="col-2 p-0" to="/cart">
