@@ -1,7 +1,52 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { firestore } from '../../firebase-config';
 
 export default function ProductCard({ brand, model, edition, src, description, price, to }) {
+
+    const [productData, setPoductData] = useState();
+
+    
+
+    useEffect(() => {
+
+        // firestore.collection("products").get().then((querySnapshot) => {
+        //     querySnapshot.forEach((doc) => {
+        //         console.log(`${doc.id} => ${doc.data()}`);
+        //     });
+        // });
+        
+        return () => {
+            
+        }
+    }, [])
+
+    function addToCart() {
+        console.log("buy");
+        
+        firestore.collection("users").add({
+            first: "Ada",
+            last: "Lovelace",
+            born: 1815
+        })
+        .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch((error) => {
+            console.error("Error adding document: ", error);
+        });
+
+
+        // firestore.collection("users").get().then((querySnapshot) => {
+        //     querySnapshot.forEach((doc) => {
+        //         console.log(`${doc.id} => ${doc.data()}`);
+        //     });
+        // });
+
+
+        
+        console.log("wat");
+    }
 
 
     return (
@@ -22,7 +67,7 @@ export default function ProductCard({ brand, model, edition, src, description, p
             </ul>
             <div className="card-body d-flex justify-content-evenly">
                 <button type="button" className="btn btn-primary">Wishlist</button>
-                <button type="button" className="btn btn-success">Buy Now</button>
+                <button type="button" className="btn btn-success" onClick={addToCart}>Buy Now</button>
             </div>
         </div>
     )
