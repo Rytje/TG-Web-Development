@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { firestore } from '../../firebase-config';
 
-export default function ProductCard({ brand, model, edition, src, description, price, to }) {
+export default function ProductCard({ collectionId, docId, description, to }) {
 
     const [productData, setPoductData] = useState();
 
-    
+
 
     useEffect(() => {
 
@@ -15,55 +15,73 @@ export default function ProductCard({ brand, model, edition, src, description, p
         //         console.log(`${doc.id} => ${doc.data()}`);
         //     });
         // });
-        
+
+        getProductData(collectionId, docId);
+
         return () => {
-            
+
         }
     }, [])
 
     function addToCart() {
-        console.log("buy");
-        
-        firestore.collection("users").add({
-            first: "Ada",
-            last: "Lovelace",
-            born: 1815
-        })
-        .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-            console.error("Error adding document: ", error);
-        });
+        console.log("Add to cart");
 
-
-        // firestore.collection("users").get().then((querySnapshot) => {
-        //     querySnapshot.forEach((doc) => {
-        //         console.log(`${doc.id} => ${doc.data()}`);
-        //     });
+        // firestore.collection("users").add({
+        //     first: "Ada",
+        //     last: "Lovelace",
+        //     born: 1815
+        // })
+        // .then((docRef) => {
+        //     console.log("Document written with ID: ", docRef.id);
+        // })
+        // .catch((error) => {
+        //     console.error("Error adding document: ", error);
         // });
 
 
-        
-        console.log("wat");
+
+        // firestore.collection("featured").get().then((querySnapshot) => {
+        //     querySnapshot.forEach((doc) => {
+        //         console.log(`${doc.id} => ${doc.data()}`);
+        //         <ProductCard docId={doc.id}/>
+        //     });
+        // });
+    }
+
+    function getProductData(collectionId, docId){
+        let docRef = firestore.collection(collectionId).doc(docId);
+
+        console.log(docRef.id);
+
+        docRef.get().then((doc) => {
+            if (doc.exists) {
+                // console.log("Document data:", doc.data());
+                setPoductData(doc.data());
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
     }
 
 
     return (
         <div className="card border-primary mb-3 me-3 col-3">
-            <h2 className="card-header">{brand}</h2>
+            <h2 className="card-header">{productData?.Brand}</h2>
             <div className="card-body">
-                <h3 className="card-title fs-5">{model}</h3>
-                <h4 className="card-subtitle fs-6 text-muted">{edition}</h4>
+                <h3 className="card-title fs-5">{productData?.Model}</h3>
+                <h4 className="card-subtitle fs-6 text-muted">{productData?.Edition}</h4>
             </div>
             <Link to={to}>
-                <img className="img-fluid" src={src} alt="" />
+                <img className="img-fluid" src={productData?.Image} alt="" />
             </Link>
             <div className="card-body">
                 <p className="card-text">{description}</p>
             </div>
             <ul className="list-group list-group-flush">
-                <li className="list-group-item fs-5 text-center">{price}</li>
+                <li className="list-group-item fs-5 text-center">{productData?.Price}</li>
             </ul>
             <div className="card-body d-flex justify-content-evenly">
                 <button type="button" className="btn btn-primary">Wishlist</button>
