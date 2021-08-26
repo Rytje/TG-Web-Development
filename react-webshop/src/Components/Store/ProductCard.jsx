@@ -4,7 +4,7 @@ import { firestore } from '../../firebase-config';
 
 export default function ProductCard({ collectionId, docId, description, to }) {
 
-    const [productData, setPoductData] = useState();
+    const [productData, setProductData] = useState();
 
 
 
@@ -51,12 +51,12 @@ export default function ProductCard({ collectionId, docId, description, to }) {
     function getProductData(collectionId, docId){
         let docRef = firestore.collection(collectionId).doc(docId);
 
-        console.log(docRef.id);
+        // console.log(docRef.id);
 
         docRef.get().then((doc) => {
             if (doc.exists) {
                 // console.log("Document data:", doc.data());
-                setPoductData(doc.data());
+                setProductData(doc.data());
             } else {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");

@@ -6,6 +6,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import FightSticksPage from './FightSticksPage';
 import PadsPage from './PadsPage';
 import ProductDetailPage from './ProductDetailPage';
+import CategoryPage from './CategoryPage';
 
 export default function StorePage() {
 
@@ -16,12 +17,13 @@ export default function StorePage() {
             <TopBar />
             <Navigation />
             <Switch>
-                <Route path={`${match.url}/fightsticks/:productId`}><ProductDetailPage /></Route>
+                {/* <Route path={`${match.url}/fightsticks/:productId`}><ProductDetailPage /></Route>
                 <Route path={`${match.url}/fightsticks`}><FightSticksPage /></Route>
-                <Route path={`${match.url}/pads`}><PadsPage /></Route>
-                <Route path="/store/buttons"><PadsPage /></Route>
-                <Route path="/store/hitbox"><PadsPage /></Route>
-                <Route path="/store/parts"><PadsPage /></Route>
+                <Route path={`${match.url}/pads`}><PadsPage /></Route> */}
+                <Route path="/store/:category/:product"><ProductDetailPage /></Route>
+                <Route path="/store/:category"><CategoryPage /></Route>
+                {/* <Route path="/store/hitbox"><CategoryPage /></Route>
+                <Route path="/store/parts"><CategoryPage /></Route> */}
             </Switch>
             <Footer />
         </div>

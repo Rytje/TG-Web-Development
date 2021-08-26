@@ -1,25 +1,59 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
+import { firestore } from '../../firebase-config';
 
 export default function ProductDetailPage({ brand, model, edition, description, price }) {
+
+    let { product, category } = useParams();
+    const [productData, setProductData] = useState();
+
+    function getProductData(collectionId, docId){
+        if(collectionId !== "featured") collectionId = "products";
+        console.log(collectionId);
+        let docRef = firestore.collection(collectionId).doc(docId);
+
+        // console.log(docRef.id);
+
+        docRef.get().then((doc) => {
+            if (doc.exists) {
+                // console.log("Document data:", doc.data());
+                setProductData(doc.data());
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
+    }
+
+    useEffect(() => {
+        getProductData(category, product);
+        return () => {
+            
+        }
+    }, [])
+
     return (
         <div>
             <div className="row">
                 <h1 className="mb-5">Product detail page</h1>
+                {/* <h2>{product} {category}</h2> */}
                 <div className="row d-flex justify-content-around mb-5">
                     <div className="col-4">
-                        <img className="img-fluid" src="https://www.etokki.com/image/cache/catalog/omni_whitegold_front-500x500.jpg" alt="" />
+                        <img className="img-fluid" src={productData?.Image} alt="" />
                     </div>
                     <div className="card border-primary mb-3 me-3 col-3">
-                        <h2 className="card-header">{brand}test</h2>
+                        <h2 className="card-header">{productData?.Brand}</h2>
                         <div className="card-body">
-                            <h3 className="card-title fs-5">{model}test</h3>
-                            <h4 className="card-subtitle fs-6 text-muted">{edition}test</h4>
+                            <h3 className="card-title fs-5">{productData?.Model}</h3>
+                            <h4 className="card-subtitle fs-6 text-muted">{productData?.Edition}</h4>
                         </div>
                         <div className="card-body">
                             <p className="card-text">{description}asdasdasd</p>
                         </div>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item fs-5 text-center">{price}300</li>
+                            <li className="list-group-item fs-5 text-center">{productData?.Price}</li>
                         </ul>
                         <div className="card-body d-flex justify-content-evenly">
                             <button type="button" className="btn btn-primary">Wishlist</button>

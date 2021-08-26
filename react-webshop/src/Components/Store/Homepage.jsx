@@ -16,7 +16,7 @@ export default function Homepage() {
         console.log("Load home page");
         firestore.collection("featured").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => ${doc.data()}`);
+                // console.log(`${doc.id} => ${doc.data()}`);
                 // setDocId(doc.id);
                 setProductsList(prevState =>{
                     let state = [doc.data(), ...prevState];
@@ -72,8 +72,8 @@ export default function Homepage() {
             <h1 className="ms-5 mb-3">Featured</h1>
             <div className="row d-flex justify-content-evenly">
                 {productsList.map((product, index) =>{
-                    console.log(docList[index]);
-                    return <ProductCard key={uuidv4()} collectionId="featured" docId={docList[index]} description="Some quick example text to build on the card title and make up the bulk of the card's content." to={`/store/fightsticks/${docList[index]}`} />
+                    // console.log(docList[index]);
+                    return <ProductCard key={uuidv4()} collectionId="featured" docId={docList[index]} description="Some quick example text to build on the card title and make up the bulk of the card's content." to={`/store/featured/${docList[index]}`} />
                 })}
                 {/* <ProductCard collectionId="products" docId="SM4MDHkEREqAheBlZCiW" description="Some quick example text to build on the card title and make up the bulk of the card's content." to="/store/fightsticks/test"/> */}
                 {/* <ProductCard brand="Etokki" model="Omni Arcade Stick" edition="Korean Edition" src="https://www.etokki.com/image/catalog/omni_6s_kr.jpg" description="Some quick example text to build on the card title and make up the bulk of the card's content." price="$359.95" to="/store/fightsticks/test" />
