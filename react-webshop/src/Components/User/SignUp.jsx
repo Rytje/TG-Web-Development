@@ -1,12 +1,14 @@
 import React, { useRef, useState } from 'react';
 import { Link, useRouteMatch, useHistory } from 'react-router-dom';
 import { useAuth } from '../../Contexts/AuthContext';
+import { firestore } from '../../firebase-config';
 
 export default function SignUp() {
 
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
+    const nameRef = useRef();
     const { signUp } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
@@ -14,7 +16,6 @@ export default function SignUp() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
             return setError("Passwords do not match.")
         }
@@ -23,12 +24,36 @@ export default function SignUp() {
             setError("");
             setLoading(true);
             await signUp(emailRef.current.value, passwordRef.current.value);
+            createUser();
             history.push("/");
         } catch {
             setError("Failed to create an account.");
         }
-
         setLoading(false);
+    }
+
+    function createUser(){
+        firestore.collection("users").add({
+                firstName: nameRef.current.value,
+                email: emailRef.current.value
+            })
+            .then((docRef) => {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch((error) => {
+                console.error("Error adding document: ", error);
+            });
+
+            // firestore.collection("users").doc(docRef.id).collection("cart").add({
+            //     product: "product",
+            //     quantity: 0
+            // })
+            // .then((docRef) => {
+            //     console.log("Document written with ID: ", docRef.id);
+            // })
+            // .catch((error) => {
+            //     console.error("Error adding document: ", error);
+            // });
     }
 
 
@@ -54,9 +79,13 @@ export default function SignUp() {
                                     <input type="password" className="form-control" id="floatingPassword" placeholder="Password" ref={passwordRef} required />
                                     <label htmlFor="floatingPassword">Password</label>
                                 </div>
-                                <div className="form-floating">
+                                <div className="form-floating mb-3">
                                     <input type="password" className="form-control" id="floatingPasswordConfirm" placeholder="Password Confirm" ref={passwordConfirmRef} required />
                                     <label htmlFor="floatingPassword">Password confirm</label>
+                                </div>
+                                <div className="form-floating">
+                                    <input type="text" className="form-control" id="floatingName" placeholder="Name" ref={nameRef} required />
+                                    <label htmlFor="floatingName">Name</label>
                                 </div>
                                 <div className="card-body d-flex justify-content-end px-0">
                                     <Link to="/">

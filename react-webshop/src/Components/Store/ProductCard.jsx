@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { firestore } from '../../firebase-config';
+import { firestore, auth } from '../../firebase-config';
 
 export default function ProductCard({ collectionId, docId, description, to }) {
 
@@ -25,6 +25,36 @@ export default function ProductCard({ collectionId, docId, description, to }) {
 
     function addToCart() {
         console.log("Add to cart");
+        console.log(auth.currentUser.email);
+        let userDocId;
+        firestore.collection("users")
+            .where("email", "==", auth.currentUser.email).get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                    userDocId = doc.id;
+
+
+                    firestore.collection("users").doc(userDocId).collection("cart").add({
+                        product: `${docId}`,
+                        quantity: 101
+                    })
+                    .then((docRef) => {
+                            console.log("Document written with ID: ", docRef.id);
+                        })
+                        .catch((error) => {
+                            console.error("Error adding document: ", error);
+                        });
+
+
+
+                });
+            })
+            .catch(function (error) {
+                console.log("Error getting documents: ", error);
+            });
+
+            
 
         // firestore.collection("users").add({
         //     first: "Ada",
@@ -48,7 +78,7 @@ export default function ProductCard({ collectionId, docId, description, to }) {
         // });
     }
 
-    function getProductData(collectionId, docId){
+    function getProductData(collectionId, docId) {
         let docRef = firestore.collection(collectionId).doc(docId);
 
         // console.log(docRef.id);
