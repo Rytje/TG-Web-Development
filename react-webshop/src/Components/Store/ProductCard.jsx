@@ -81,7 +81,7 @@ export default function ProductCard({ collectionId, docId, description, to }) {
                 <p className="card-text">{description}</p>
             </div>
             <ul className="list-group list-group-flush">
-                <li className="list-group-item fs-5 text-center">{productData?.Price}</li>
+                <li className="list-group-item fs-5 text-center">${productData?.Price}</li>
             </ul>
             <div className="card-body d-flex justify-content-evenly">
                 <button type="button" className="btn btn-primary">Wishlist</button>

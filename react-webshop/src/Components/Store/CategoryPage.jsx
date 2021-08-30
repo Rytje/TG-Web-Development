@@ -33,6 +33,9 @@ export default function CategoryPage() {
                 case "buttons":
                 searchCategory = "button";
                 break;
+                case "hitbox":
+                searchCategory = "hitbox";
+                break;
                 
             default:
                 searchCategory = null;

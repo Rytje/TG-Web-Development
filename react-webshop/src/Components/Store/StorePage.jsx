@@ -3,8 +3,6 @@ import Footer from '../Layout/Footer';
 import TopBar from '../Layout/TopBar';
 import Navigation from '../Layout/Navigation';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
-import FightSticksPage from './FightSticksPage';
-import PadsPage from './PadsPage';
 import ProductDetailPage from './ProductDetailPage';
 import CategoryPage from './CategoryPage';
 
