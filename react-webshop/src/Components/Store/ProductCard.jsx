@@ -37,7 +37,8 @@ export default function ProductCard({ collectionId, docId, description, to }) {
 
                     firestore.collection("users").doc(userDocId).collection("cart").add({
                         product: `${docId}`,
-                        quantity: 101
+                        quantity: 1,
+                        collection: `${collectionId}`
                     })
                     .then((docRef) => {
                             console.log("Document written with ID: ", docRef.id);
