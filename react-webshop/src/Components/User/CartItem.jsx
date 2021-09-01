@@ -56,7 +56,7 @@ export default function CartItem({ product, collection, cartItemDocRef, cartCont
     return (
         <>
             <tr className="table-default">
-                <th scope="row"><img className="img-fluid w-25" src={productData?.Image} /></th>
+                <th scope="row"><img className="img-fluid" src={productData?.Image} /></th>
                 <td>
                     <h2 className="card-title fs-4">{productData?.Brand}</h2>
                     <h3 className="card-title fs-5">{productData?.Model}</h3>

@@ -63,7 +63,7 @@ export default function ProductCard({ collectionId, docId, description, to }) {
 
 
     return (
-        <div className="card border-primary mb-3 me-3 col-3">
+        <div className="card border-primary mb-5 mb-lg-3 me-lg-3 col-10 col-sm-5 col-lg-3">
             <h2 className="card-header">{productData?.Brand}</h2>
             <div className="card-body">
                 <h3 className="card-title fs-5">{productData?.Model}</h3>
@@ -72,7 +72,7 @@ export default function ProductCard({ collectionId, docId, description, to }) {
             <Link to={to}>
                 <img className="img-fluid" src={productData?.Image} alt="" />
             </Link>
-            <div className="card-body">
+            <div className="card-body d-none d-sm-block">
                 <p className="card-text">{description}</p>
             </div>
             <ul className="list-group list-group-flush">

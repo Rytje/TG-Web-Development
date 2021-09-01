@@ -73,11 +73,11 @@ export default function Cart() {
             <table className="table table-hover">
                 <thead>
                     <tr>
-                        <th className="fs-5" scope="col"></th>
-                        <th className="fs-5" scope="col">Product</th>
-                        <th className="fs-5" scope="col">Quantity</th>
-                        <th className="fs-5" scope="col">Action</th>
-                        <th className="fs-5" scope="col">Price</th>
+                        <th className="col-4 col-sm-3 fs-5" scope="col"></th>
+                        <th className="col-5 col-sm-6 fs-5" scope="col">Product</th>
+                        <th className="col-1 fs-5" scope="col">Quantity</th>
+                        <th className="col-1 fs-5" scope="col">Action</th>
+                        <th className="col-1 fs-5" scope="col">Price</th>
                     </tr>
                 </thead>
                 <tbody>

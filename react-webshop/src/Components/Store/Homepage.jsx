@@ -66,7 +66,7 @@ export default function Homepage() {
             </div>
 
             <h1 className="ms-5 mb-3">Featured</h1>
-            <div className="row d-flex justify-content-evenly">
+            <div className="row d-flex justify-content-evenly mb-5">
                 {productsList.map((product, index) => {
                     return <ProductCard key={uuidv4()} collectionId="featured" docId={docList[index]} description="Some quick example text to build on the card title and make up the bulk of the card's content." to={`/store/featured/${docList[index]}`} />
                 })}
