@@ -30,7 +30,7 @@ export default function SignIn() {
 
     return (
         <div>
-            <div className="row">
+            <div className="row mb-5">
                 <div className="card text-white bg-dark col-6 mx-auto mb-3">
                     <h1 className="card-header">Sign in</h1>
                     {error && <div className="alert alert-dismissible alert-danger">

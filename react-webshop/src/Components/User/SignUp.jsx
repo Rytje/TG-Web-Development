@@ -50,7 +50,7 @@ export default function SignUp() {
 
     return (
         <div>
-            <div className="row">
+            <div className="row mb-5">
                 <div className="card text-white bg-dark col-6 mx-auto mb-3">
                     <h1 className="card-header">Create an account</h1>
                     {error && <div className="alert alert-dismissible alert-danger">

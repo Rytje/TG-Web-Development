@@ -33,7 +33,7 @@ export default function ProductDetailPage({ brand, model, edition, description, 
 
     return (
         <div>
-            <div className="row">
+            <div className="row mb-5">
                 <h1 className="mb-5">Product detail page</h1>
                 <div className="row d-flex justify-content-around mb-5">
                     <div className="col-4">

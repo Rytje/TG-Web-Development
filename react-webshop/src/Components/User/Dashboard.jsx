@@ -18,7 +18,7 @@ export default function Dashboard() {
     }
 
     return (
-        <div className="d-grid gap-2">
+        <div className="d-grid gap-2 mb-5">
             {error && <div className="alert alert-dismissible alert-danger">
                 <button type="button" className="btn-close" data-bs-dismiss="alert"></button>
                 {error}

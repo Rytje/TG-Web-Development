@@ -68,7 +68,7 @@ export default function CategoryPage() {
     return (
         <div>
             <h2>{capitalizeFirstLetter(category)} category</h2>
-            <div className="row d-flex justify-content-evenly">
+            <div className="row d-flex justify-content-evenly mb-5">
                 {productsList.map((product, index) => {
                     return <ProductCard key={uuidv4()} collectionId="products" docId={docList[index]} description="Some quick example text to build on the card title and make up the bulk of the card's content." to={`/store/${category}/${docList[index]}`} />
                 })}
