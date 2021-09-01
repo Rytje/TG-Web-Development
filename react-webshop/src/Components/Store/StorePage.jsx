@@ -20,8 +20,6 @@ export default function StorePage() {
                 <Route path={`${match.url}/pads`}><PadsPage /></Route> */}
                 <Route path="/store/:category/:product"><ProductDetailPage /></Route>
                 <Route path="/store/:category"><CategoryPage /></Route>
-                {/* <Route path="/store/hitbox"><CategoryPage /></Route>
-                <Route path="/store/parts"><CategoryPage /></Route> */}
             </Switch>
             <Footer />
         </div>

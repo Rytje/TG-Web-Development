@@ -32,28 +32,17 @@ export default function SignUp() {
         setLoading(false);
     }
 
-    function createUser(){
+    function createUser() {
         firestore.collection("users").add({
-                firstName: nameRef.current.value,
-                email: emailRef.current.value
-            })
+            firstName: nameRef.current.value,
+            email: emailRef.current.value
+        })
             .then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
             })
             .catch((error) => {
                 console.error("Error adding document: ", error);
             });
-
-            // firestore.collection("users").doc(docRef.id).collection("cart").add({
-            //     product: "product",
-            //     quantity: 0
-            // })
-            // .then((docRef) => {
-            //     console.log("Document written with ID: ", docRef.id);
-            // })
-            // .catch((error) => {
-            //     console.error("Error adding document: ", error);
-            // });
     }
 
 

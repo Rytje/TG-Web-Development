@@ -32,7 +32,6 @@ export default function CartItem({ product, collection, cartItemDocRef, cartCont
                 querySnapshot.forEach((doc) => {
                     // doc.data() is never undefined for query doc snapshots
 
-
                     console.log(cartContent);
                     console.log(cartItem.product);
                     showToast();
@@ -49,9 +48,6 @@ export default function CartItem({ product, collection, cartItemDocRef, cartCont
                             });
                         }
                     });
-
-
-
                 });
             })
     }
@@ -59,13 +55,6 @@ export default function CartItem({ product, collection, cartItemDocRef, cartCont
 
     return (
         <>
-            {/* <li className="list-group-item d-flex justify-content-between align-items-center">
-                    <img className="img-fluid w-25" src="https://www.etokki.com/image/catalog/omni_6_sa.jpg" />
-                    {product}
-                    <span className="badge bg-primary rounded-pill">14</span>
-                    <button>Remove</button>
-                </li> */}
-
             <tr className="table-default">
                 <th scope="row"><img className="img-fluid w-25" src={productData?.Image} /></th>
                 <td>
@@ -73,10 +62,8 @@ export default function CartItem({ product, collection, cartItemDocRef, cartCont
                     <h3 className="card-title fs-5">{productData?.Model}</h3>
                     <h4 className="card-subtitle fs-6 text-muted">{productData?.Edition}</h4>
                 </td>
-                {/* <td><span className="badge bg-primary rounded-pill fs-6">14</span></td> */}
                 <td>
                     <div className="form-group">
-                        {/* <label for="exampleSelect1" class="form-label mt-4">Example select</label> */}
                         <select className="form-select" id="exampleSelect1">
                             <option>1</option>
                             <option>2</option>

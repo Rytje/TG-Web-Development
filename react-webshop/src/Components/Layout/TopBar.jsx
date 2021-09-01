@@ -1,11 +1,6 @@
 import React from 'react'
 import logo from '../../Assets/Images/asfclogo.png';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from '../../Contexts/AuthContext';
 
 export default function TopBar() {
@@ -31,27 +26,15 @@ export default function TopBar() {
                         <button className="btn btn-secondary" type="submit">Search</button>
                     </form>
                     <div className="col-6 d-flex justify-content-end pe-0">
-                        {/* <Router> */}
-                            <Link className="col-2 p-0" to="/wishlist">
-                                <button type="button" className="btn btn-primary col-12">Wishlist</button>
-                            </Link>
-                            <Link className="col-2 p-0" to={currentUser ? "/account/dashboard" : "/account/signin"}>
-                                <button type="button" className="btn btn-primary col-12">Account</button>
-                            </Link>
-                            <Link className="col-2 p-0" to="/cart">
-                                <button type="button" className="btn btn-primary col-12">Cart</button>
-                            </Link>
-
-                            <div>
-                                {/* A <Switch> looks through its children <Route>s and renders the first one that matches the current URL. */}
-                                <Switch>
-                                    {/* <Route path="/wishlist" component={WishList} /> */}
-                                    {/* <Route path="/account" component={SignUp} /> */}
-                                    {/* <Route path="/cart" component={Cart} /> */}
-                                </Switch>
-                            </div>
-
-                        {/* </Router> */}
+                        <Link className="col-2 p-0" to="/wishlist">
+                            <button type="button" className="btn btn-primary col-12">Wishlist</button>
+                        </Link>
+                        <Link className="col-2 p-0" to={currentUser ? "/account/dashboard" : "/account/signin"}>
+                            <button type="button" className="btn btn-primary col-12">Account</button>
+                        </Link>
+                        <Link className="col-2 p-0" to="/cart">
+                            <button type="button" className="btn btn-primary col-12">Cart</button>
+                        </Link>
                     </div>
                 </div>
             </div>

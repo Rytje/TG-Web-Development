@@ -26,21 +26,15 @@ export default function Cart() {
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     // doc.data() is never undefined for query doc snapshots
-
-
-                    // console.log(doc.id);
-
                     let docRef = doc;
                     doc.ref.collection("cart").get().then((querySnapshot) => {
                         querySnapshot.forEach((doc) => {
-                            // console.log(`${doc.id} => ${doc.data()}`);
                             setCartItemDocRef(prevState => {
                                 let state = [doc.id, ...prevState];
                                 return state;
                             });
                             setCartContent(prevState => {
                                 let state = [doc.data(), ...prevState];
-                                // console.log(state);
                                 return state;
                             });
 
@@ -49,24 +43,11 @@ export default function Cart() {
 
                 });
             })
-
-        // firestore.collection("users").where("email", "==", auth.currentUser.email).get()
-        // .then((querySnapshot) => {
-        //     querySnapshot.forEach((doc) => {
-        //         // doc.data() is never undefined for query doc snapshots
-
-
-
-        //     });
-        // })
-        // .catch(function (error) {
-        //     console.log("Error getting documents: ", error);
-        // });
     }
 
 
-    function showToast(){
-        
+    function showToast() {
+
     }
 
     return (
@@ -89,15 +70,6 @@ export default function Cart() {
             </div>
 
             <h1>Cart</h1>
-            {/* <button onClick={showCart}>Show Cart</button> */}
-            {/* <ul className="list-group">
-                {cartContent.map((cartItem) => {
-                    // console.log(docList[index]);
-                    return <CartItem key={uuidv4()} product={cartItem.product} />
-                })}
-            </ul> */}
-
-
             <table className="table table-hover">
                 <thead>
                     <tr>
@@ -110,7 +82,6 @@ export default function Cart() {
                 </thead>
                 <tbody>
                     {cartContent.map((cartItem, index) => {
-                        // console.log(docList[index]);
                         return <CartItem key={uuidv4()} product={cartItem.product} collection={cartItem.collection} cartItemDocRef={cartItemDocRef[index]} cartContent={cartContent} setCartContent={setCartContent} cartItem={cartItem} setErrorMessage={setErrorMessage} showToast={showToast} />
                     })}
                 </tbody>

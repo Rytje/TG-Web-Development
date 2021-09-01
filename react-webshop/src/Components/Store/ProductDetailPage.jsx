@@ -7,16 +7,13 @@ export default function ProductDetailPage({ brand, model, edition, description, 
     let { product, category } = useParams();
     const [productData, setProductData] = useState();
 
-    function getProductData(collectionId, docId){
-        if(collectionId !== "featured") collectionId = "products";
+    function getProductData(collectionId, docId) {
+        if (collectionId !== "featured") collectionId = "products";
         console.log(collectionId);
         let docRef = firestore.collection(collectionId).doc(docId);
 
-        // console.log(docRef.id);
-
         docRef.get().then((doc) => {
             if (doc.exists) {
-                // console.log("Document data:", doc.data());
                 setProductData(doc.data());
             } else {
                 // doc.data() will be undefined in this case
@@ -30,7 +27,7 @@ export default function ProductDetailPage({ brand, model, edition, description, 
     useEffect(() => {
         getProductData(category, product);
         return () => {
-            
+
         }
     }, [])
 
@@ -38,7 +35,6 @@ export default function ProductDetailPage({ brand, model, edition, description, 
         <div>
             <div className="row">
                 <h1 className="mb-5">Product detail page</h1>
-                {/* <h2>{product} {category}</h2> */}
                 <div className="row d-flex justify-content-around mb-5">
                     <div className="col-4">
                         <img className="img-fluid" src={productData?.Image} alt="" />

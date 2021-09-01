@@ -9,15 +9,7 @@ export default function ProductCard({ collectionId, docId, description, to }) {
 
 
     useEffect(() => {
-
-        // firestore.collection("products").get().then((querySnapshot) => {
-        //     querySnapshot.forEach((doc) => {
-        //         console.log(`${doc.id} => ${doc.data()}`);
-        //     });
-        // });
-
         getProductData(collectionId, docId);
-
         return () => {
 
         }
@@ -34,49 +26,22 @@ export default function ProductCard({ collectionId, docId, description, to }) {
                     // doc.data() is never undefined for query doc snapshots
                     userDocId = doc.id;
 
-
                     firestore.collection("users").doc(userDocId).collection("cart").add({
                         product: `${docId}`,
                         quantity: 1,
                         collection: `${collectionId}`
                     })
-                    .then((docRef) => {
+                        .then((docRef) => {
                             console.log("Document written with ID: ", docRef.id);
                         })
                         .catch((error) => {
                             console.error("Error adding document: ", error);
                         });
-
-
-
                 });
             })
             .catch(function (error) {
                 console.log("Error getting documents: ", error);
             });
-
-            
-
-        // firestore.collection("users").add({
-        //     first: "Ada",
-        //     last: "Lovelace",
-        //     born: 1815
-        // })
-        // .then((docRef) => {
-        //     console.log("Document written with ID: ", docRef.id);
-        // })
-        // .catch((error) => {
-        //     console.error("Error adding document: ", error);
-        // });
-
-
-
-        // firestore.collection("featured").get().then((querySnapshot) => {
-        //     querySnapshot.forEach((doc) => {
-        //         console.log(`${doc.id} => ${doc.data()}`);
-        //         <ProductCard docId={doc.id}/>
-        //     });
-        // });
     }
 
     function getProductData(collectionId, docId) {
@@ -86,7 +51,6 @@ export default function ProductCard({ collectionId, docId, description, to }) {
 
         docRef.get().then((doc) => {
             if (doc.exists) {
-                // console.log("Document data:", doc.data());
                 setProductData(doc.data());
             } else {
                 // doc.data() will be undefined in this case

@@ -17,12 +17,9 @@ function App() {
         <Router>
           {/* A <Switch> looks through its children <Route>s and renders the first one that matches the current URL. */}
           <Switch>
-            {/* <Route path="/fightsticks" component={FightSticksPage} /> */}
             <Route path="/cart"><Cart /></Route>
             <Route path="/account"><UserPage /></Route>
             <Route path="/store"><StorePage /></Route>
-            {/* <Route path="/fightsticks"><FightSticksPage /></Route> */}
-            {/* <Route path="/pads" component={PadsPage} /> */}
             <Route path="/" component={Homepage} />
           </Switch>
         </Router>
