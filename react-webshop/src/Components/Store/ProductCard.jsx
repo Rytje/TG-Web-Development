@@ -16,7 +16,10 @@ export default function ProductCard({ collectionId, docId, description, to }) {
     }, [])
 
     function addToCart() {
-        console.log("Add to cart");
+        if (auth.currentUser == null) {
+            console.log("not logged in");
+            return;
+        }
         console.log(auth.currentUser.email);
         let userDocId;
         firestore.collection("users")
