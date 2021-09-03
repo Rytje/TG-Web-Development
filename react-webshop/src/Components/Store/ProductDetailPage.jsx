@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import { firestore } from '../../firebase-config';
+import { firestore, auth } from '../../firebase-config';
 
 export default function ProductDetailPage({ brand, model, edition, description, price }) {
 
     let { product, category } = useParams();
     const [productData, setProductData] = useState();
+    
+    useEffect(() => {
+        getProductData(category, product);
+        return () => {
+
+        }
+    }, []);
 
     function getProductData(collectionId, docId) {
         if (collectionId !== "featured") collectionId = "products";
@@ -24,12 +31,40 @@ export default function ProductDetailPage({ brand, model, edition, description, 
         });
     }
 
-    useEffect(() => {
-        getProductData(category, product);
-        return () => {
-
+    function addToCart() {
+        if (auth.currentUser == null) {
+            console.log("not logged in");
+            return;
         }
-    }, [])
+        console.log(auth.currentUser.email);
+        let userDocId;
+        firestore.collection("users")
+            .where("email", "==", auth.currentUser.email).get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                    userDocId = doc.id;
+
+                    let tempCategory = "featured";
+                    if (category !== "featured") tempCategory = "products";
+
+                    firestore.collection("users").doc(userDocId).collection("cart").add({
+                        product: `${product}`,
+                        quantity: 1,
+                        collection: `${tempCategory}`
+                    })
+                        .then((docRef) => {
+                            console.log("Document written with ID: ", docRef.id);
+                        })
+                        .catch((error) => {
+                            console.error("Error adding document: ", error);
+                        });
+                });
+            })
+            .catch(function (error) {
+                console.log("Error getting documents: ", error);
+            });
+    }
 
     return (
         <div>
@@ -53,7 +88,7 @@ export default function ProductDetailPage({ brand, model, edition, description, 
                         </ul>
                         <div className="card-body d-flex justify-content-evenly">
                             <button type="button" className="btn btn-primary">Wishlist</button>
-                            <button type="button" className="btn btn-success">Buy Now</button>
+                            <button type="button" className="btn btn-success" onClick={addToCart}>Buy Now</button>
                         </div>
                     </div>
                 </div>

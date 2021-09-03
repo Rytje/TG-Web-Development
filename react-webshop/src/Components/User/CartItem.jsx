@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { firestore, auth } from '../../firebase-config';
 
-export default function CartItem({ product, collection, cartItemDocRef, cartContent, setCartContent, cartItem, setErrorMessage, showToast }) {
+export default function CartItem({ product, collection, cartItemDocRefList, cartItemDocRef, setCartItemDocRef, cartContent, setCartContent, cartItem, setErrorMessage, showToast }) {
 
     const [productData, setProductData] = useState();
 
@@ -40,6 +40,7 @@ export default function CartItem({ product, collection, cartItemDocRef, cartCont
                         if (element.product == cartItem.product) {
                             setCartContent(cartContent.filter(item => item !== cartItem));
                             doc.ref.collection("cart").doc(cartItemDocRef).delete().then(() => {
+                                setCartItemDocRef(cartItemDocRefList.filter( item => item !== cartItemDocRef));
                                 console.log("Document successfully deleted!");
                                 setErrorMessage("Item has been successfully removed from your cart!");
                             }).catch((error) => {

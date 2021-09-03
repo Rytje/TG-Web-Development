@@ -81,8 +81,9 @@ export default function Cart() {
                     </tr>
                 </thead>
                 <tbody>
+                    {cartContent.length === 0? <h2 className="text-muted">Cart is empty</h2>:null}
                     {cartContent.map((cartItem, index) => {
-                        return <CartItem key={uuidv4()} product={cartItem.product} collection={cartItem.collection} cartItemDocRef={cartItemDocRef[index]} cartContent={cartContent} setCartContent={setCartContent} cartItem={cartItem} setErrorMessage={setErrorMessage} showToast={showToast} />
+                        return <CartItem key={uuidv4()} product={cartItem.product} collection={cartItem.collection} cartItemDocRefList= {cartItemDocRef} cartItemDocRef={cartItemDocRef[index]} setCartItemDocRef={setCartItemDocRef} cartContent={cartContent} setCartContent={setCartContent} cartItem={cartItem} setErrorMessage={setErrorMessage} showToast={showToast} />
                     })}
                 </tbody>
             </table>

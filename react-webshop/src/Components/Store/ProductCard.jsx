@@ -78,7 +78,7 @@ export default function ProductCard({ collectionId, docId, description, to }) {
             <div className="card-body d-none d-sm-block">
                 <p className="card-text">{description}</p>
             </div>
-            <ul className="list-group list-group-flush">
+            <ul className="list-group list-group-flush mt-3 mt-sm-0">
                 <li className="list-group-item fs-5 text-center">${productData?.Price}</li>
             </ul>
             <div className="card-body d-flex justify-content-evenly">
