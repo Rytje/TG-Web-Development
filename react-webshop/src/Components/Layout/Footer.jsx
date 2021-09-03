@@ -7,38 +7,34 @@ export default function Footer() {
 
 
     return (
-            <div className="row">
-                <table className="table mb-0">
-                    <thead className="table-dark">
-                        <tr>
-                            <th className="fs-5 fw-normal" scope="col">Customer service</th>
-                            <th className="fs-5 fw-normal" scope="col">About After School Fight Club</th>
-                            <th className="fs-5 fw-normal" scope="col">Business</th>
-                            <th className="fs-5 fw-normal" scope="col">Shop locations</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr className="table-dark">
-                            <td><a href="#">Contact</a></td>
-                            <td><a href="#">Work at ASFC</a></td>
-                            <td><a href="#">Business sales</a></td>
-                            <td><a href="#">Amsterdam</a></td>
-                        </tr>
-                        <tr className="table-dark">
-                            <td><a href="#">Returns</a></td>
-                            <td><a href="#">Blog</a></td>
-                            <td><a href="#">Become a partner</a></td>
-                            <td><a href="#">Tokyo</a></td>
-                        </tr>
-                        <tr className="table-dark">
-                            <td><a href="#">Terms &amp; Conditions</a></td>
-                            <td><a href="#">Opening times</a></td>
-                            <td><a href="#">API</a></td>
-                            <td><a href="#">London</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div className="row bg-dark pt-3">
+            <div className="col-6 col-sm-3 mb-5 mb-sm-0">
+                <h5 className="text-white">Customer service</h5>
+                <a className="d-block" href="#">Contact</a>
+                <a className="d-block" href="#">Returns</a>
+                <a className="d-block" href="#">Terms &amp; Conditions</a>
+            </div>
+            <div className="col-6 col-sm-3 mb-5 mb-sm-0">
+                <h5 className="text-white">About After School Fight Club</h5>
+                <a className="d-block" href="#">Work at ASFC</a>
+                <a className="d-block" href="#">Blog</a>
+                <a className="d-block" href="#">Opening times</a>
+            </div>
+            <div className="col-6 col-sm-3 mb-5 mb-sm-0">
+                <h5 className="text-white">Business</h5>
+                <a className="d-block" href="#">Business sales</a>
+                <a className="d-block" href="#">Become a partner</a>
+                <a className="d-block" href="#">API</a>
+            </div>
+            <div className="col-6 col-sm-3 mb-5 mb-sm-0">
+                <h5 className="text-white">Shop locations</h5>
+                <a className="d-block" href="#">Amsterdam</a>
+                <a className="d-block" href="#">Tokyo</a>
+                <a className="d-block" href="#">London</a>
+            </div>
+            <div className="col-12">
                 <p className="text-center text-secondary bg-dark pt-3 mb-0">&copy; Made by Ryno {date.getFullYear()}</p>
             </div>
+        </div>
     )
 }
